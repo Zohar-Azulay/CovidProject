@@ -21,7 +21,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication.ui.R;
+import com.example.myapplication.R;
 
 public class LoginFragment extends Fragment {
 

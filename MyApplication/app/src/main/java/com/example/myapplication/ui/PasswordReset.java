@@ -12,10 +12,10 @@ import com.example.myapplication.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Password_reset#newInstance} factory method to
+ * Use the {@link PasswordReset#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Password_reset extends Fragment {
+public class PasswordReset extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class Password_reset extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Password_reset() {
+    public PasswordReset() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class Password_reset extends Fragment {
      * @return A new instance of fragment Password_reset.
      */
     // TODO: Rename and change types and number of parameters
-    public static Password_reset newInstance(String param1, String param2) {
-        Password_reset fragment = new Password_reset();
+    public static PasswordReset newInstance(String param1, String param2) {
+        PasswordReset fragment = new PasswordReset();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
