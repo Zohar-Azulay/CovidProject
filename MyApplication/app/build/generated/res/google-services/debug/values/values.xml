@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">990186931302-ldj33pso5vbq8uiurecedog5tgvvfkh8.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">990186931302</string>
+    <string name="google_api_key" translatable="false">AIzaSyCGDE1ULqDATGJI2UI2nuN1OhHGFkGz-nY</string>
+    <string name="google_app_id" translatable="false">1:990186931302:android:569b0d9f15a73f8d26d9a7</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCGDE1ULqDATGJI2UI2nuN1OhHGFkGz-nY</string>
+    <string name="google_storage_bucket" translatable="false">cov-aid-db7dc.appspot.com</string>
+    <string name="project_id" translatable="false">cov-aid-db7dc</string>
+</resources>

@@ -1,0 +1,8 @@
+com/example/myapplication/ui/reg_h.java
+ com.example.myapplication.ui.reg_h
+com/example/myapplication/BuildConfig.java
+ com.example.myapplication.BuildConfig
+com/example/myapplication/ui/ForgotPassword.java
+ com.example.myapplication.ui.ForgotPassword
+com/example/myapplication/ui/MainActivity.java
+ com.example.myapplication.ui.MainActivity
