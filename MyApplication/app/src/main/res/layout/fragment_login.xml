@@ -19,9 +19,10 @@
         android:layout_marginTop="96dp"
         android:layout_marginEnd="24dp"
         android:autofillHints="@string/prompt_email"
-        android:hint="@string/prompt_email"
+        android:hint="כתובת מייל:"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
+        tools:ignore="HardcodedText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,14 +35,17 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:autofillHints="@string/prompt_password"
-        android:hint="@string/prompt_password"
+        android:freezesText="false"
+        android:gravity="right"
+        android:hint=":סיסמה"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        tools:ignore="HardcodedText,RtlHardcoded" />
 
     <Button
         android:id="@+id/login"
@@ -53,12 +57,14 @@
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="64dp"
         android:enabled="false"
-        android:text="@string/action_sign_in"
+        android:text="התחבר"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.2"
+        tools:ignore="HardcodedText" />
 
     <ProgressBar
         android:id="@+id/loading"
@@ -75,4 +81,17 @@
         app:layout_constraintStart_toStartOf="@+id/password"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="שכחתי את הסיסמה"
+        tools:ignore="HardcodedText"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
 </androidx.constraintlayout.widget.ConstraintLayout>
