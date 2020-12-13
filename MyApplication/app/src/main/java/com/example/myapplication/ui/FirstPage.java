@@ -27,6 +27,7 @@ public class FirstPage extends Fragment {
         btnFragment.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View V){
+                assert getFragmentManager() != null;
                 FragmentTransaction fr=getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container,new LoginFragment());
                 fr.commit();

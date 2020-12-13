@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.ui.login;
 
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
+import com.example.myapplication.ui.ForgotPassword;
 
 public class LoginFragment extends Fragment {
 
@@ -32,7 +34,18 @@ public class LoginFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        View view= inflater.inflate(R.layout.fragment_login, container, false);
+        Button btnFragment=(Button)view.findViewById(R.id.button5);
+        btnFragment.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View V){
+                assert getFragmentManager() != null;
+                FragmentTransaction fr=getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container,new ForgotPassword());
+                fr.commit();
+            }
+        });
+        return view;
     }
 
     @Override
@@ -135,4 +148,5 @@ public class LoginFragment extends Fragment {
                     Toast.LENGTH_LONG).show();
         }
     }
+
 }
