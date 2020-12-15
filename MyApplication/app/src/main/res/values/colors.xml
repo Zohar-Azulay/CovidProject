@@ -14,6 +14,8 @@
     <color name="yellow">#FFFF00</color>
     <color name="orange">#FF7F00</color>
     <color name="red">#FF0000</color>
-    <color name="green_background">#60A646</color>
+    <color name="green_background">#A9D19B</color>
     <color name="pledge_window_background">#52F6EBA2</color>
+    <color name="btm_text">#E1CAED</color>
+    <color name="background_support">#9CF6FF</color>
 </resources>

@@ -9,11 +9,11 @@ import com.example.myapplication.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link reg_h#newInstance} factory method to
+ * Use the {@link reg_p#newInstance} factory method to
  * create an instance of this fragment.
  *
  */
-public class reg_h extends Fragment {
+public class reg_p extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,8 +33,8 @@ public class reg_h extends Fragment {
      * @return A new instance of fragment reg_h.
      */
     // TODO: Rename and change types and number of parameters
-    public static reg_h newInstance(String param1, String param2) {
-        reg_h fragment = new reg_h();
+    public static reg_p newInstance(String param1, String param2) {
+        reg_p fragment = new reg_p();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -42,7 +42,7 @@ public class reg_h extends Fragment {
         return fragment;
     }
 
-    public reg_h() {
+    public reg_p() {
         // Required empty public constructor
     }
 
