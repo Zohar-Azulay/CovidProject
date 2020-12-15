@@ -2,11 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registry_pledger_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green_background"
     android:orientation="vertical"
-    tools:context=".ui.reg_h">
+    tools:context=".ui.reg_p">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -18,7 +19,7 @@
         android:gravity="center"
         android:text="@string/registration"
         android:textAlignment="center"
-        android:textSize="60dp" />
+        android:textSize="46sp" />
 
     <LinearLayout
         android:id="@+id/name_h_layout"
@@ -31,8 +32,11 @@
             android:id="@+id/fullname_fill_h"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
+            android:autofillHints=""
             android:ems="10"
+            android:hint="@string/fullname_hint"
             android:inputType="textPersonName" />
 
         <TextView
@@ -40,10 +44,9 @@
             android:layout_width="wrap_content"
             android:layout_height="73dp"
             android:layout_gravity="end"
-            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
             android:gravity="center_vertical"
             android:layoutDirection="rtl"
-            android:lineSpacingExtra="12sp"
             android:text="@string/fullname"
             android:textSize="30sp" />
 
@@ -57,17 +60,22 @@
 
         <Spinner
             android:id="@+id/years_fill_h"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:importantForAutofill="no"
+            android:isScrollContainer="true"
+            android:layoutDirection="rtl"
+            android:scrollbars="none"
+            android:spinnerMode="dropdown" />
 
         <TextView
             android:id="@+id/years_title_h"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="73dp"
             android:layout_gravity="end"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
+            android:layout_marginStart="10dp"
             android:gravity="center_vertical"
             android:layoutDirection="rtl"
             android:text="@string/yearofbirth"
@@ -86,8 +94,11 @@
             android:id="@+id/address_reg_h"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:ems="10"
+            android:hint="@string/address_residance"
+            android:importantForAutofill="no"
             android:inputType="textPersonName" />
 
         <TextView
@@ -95,9 +106,9 @@
             android:layout_width="wrap_content"
             android:layout_height="73dp"
             android:layout_gravity="end"
-            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
             android:gravity="center_vertical"
-            android:lineSpacingExtra="12sp"
+            android:layoutDirection="rtl"
             android:text="@string/address"
             android:textSize="30sp" />
 
@@ -110,22 +121,37 @@
         android:gravity="end"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/cellphone_reg_h"
-            android:layout_width="0dp"
+        <Spinner
+            android:id="@+id/op_code_cell"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:dropDownWidth="wrap_content"
+            android:layoutDirection="rtl"
+            android:longClickable="false"
+            android:scrollbars="none"
+            android:spinnerMode="dropdown" />
+
+        <EditText
+            android:id="@+id/cellphone_reg_h"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
             android:ems="10"
-            android:inputType="phone" />
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart" />
 
         <TextView
             android:id="@+id/phone_h"
             android:layout_width="wrap_content"
             android:layout_height="73dp"
             android:layout_gravity="end"
-            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
             android:gravity="center_vertical"
-            android:lineSpacingExtra="12sp"
+            android:layoutDirection="rtl"
             android:text="@string/cellphone"
             android:textSize="30sp" />
 
@@ -141,19 +167,23 @@
             android:id="@+id/email_reg_h"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/email_hint"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart" />
 
         <TextView
             android:id="@+id/email_h"
             android:layout_width="wrap_content"
             android:layout_height="73dp"
             android:layout_gravity="end"
-            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
             android:gravity="center_vertical"
-            android:layoutDirection="locale"
-            android:lineSpacingExtra="12sp"
+            android:layoutDirection="rtl"
             android:text="@string/email"
             android:textSize="30sp" />
 
@@ -167,21 +197,26 @@
 
         <EditText
             android:id="@+id/password_reg_h"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:hint="@string/password_hint"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:layoutDirection="rtl"
+            android:textAlignment="textEnd" />
 
         <TextView
             android:id="@+id/password_title"
             android:layout_width="wrap_content"
             android:layout_height="73dp"
             android:layout_gravity="end"
-            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
             android:layout_weight="0"
             android:gravity="center_vertical|end"
-            android:lineSpacingExtra="12sp"
+            android:layoutDirection="rtl"
             android:text="@string/password"
             android:textSize="30sp" />
     </LinearLayout>
@@ -210,7 +245,6 @@
         android:layoutDirection="rtl"
         android:text="@string/confirm_reg"
         android:textAlignment="center"
-        android:textColor="#4CAF50"
 
         android:textSize="36sp"
         android:textStyle="bold" />
