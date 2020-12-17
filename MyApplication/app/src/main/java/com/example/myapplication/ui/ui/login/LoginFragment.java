@@ -1,12 +1,7 @@
 package com.example.myapplication.ui.ui.login;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 import androidx.fragment.app.FragmentTransaction;
->>>>>>> Zohar
->>>>>>> main
+
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.annotation.NonNull;
@@ -27,17 +22,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-<<<<<<< HEAD
-import com.example.myapplication.R;
-=======
-<<<<<<< HEAD
-import com.example.myapplication.ui.R;
-=======
 import com.example.myapplication.R;
 import com.example.myapplication.ui.ForgotPassword;
->>>>>>> Zohar
->>>>>>> main
+
 
 public class LoginFragment extends Fragment {
 
@@ -48,12 +35,7 @@ public class LoginFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-<<<<<<< HEAD
-        return inflater.inflate(R.layout.fragment_login, container, false);
-=======
-<<<<<<< HEAD
-        return inflater.inflate(R.layout.fragment_login, container, false);
-=======
+
         View view= inflater.inflate(R.layout.fragment_login, container, false);
         Button btnFragment=(Button)view.findViewById(R.id.button5);
         btnFragment.setOnClickListener(new View.OnClickListener(){
@@ -66,8 +48,7 @@ public class LoginFragment extends Fragment {
             }
         });
         return view;
->>>>>>> Zohar
->>>>>>> main
+
     }
 
     @Override
@@ -170,12 +151,5 @@ public class LoginFragment extends Fragment {
                     Toast.LENGTH_LONG).show();
         }
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-    
 
->>>>>>> Zohar
->>>>>>> main
 }
