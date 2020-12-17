@@ -3,10 +3,15 @@ package com.example.myapplication.ui;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+<<<<<<< HEAD
+=======
+import androidx.fragment.app.FragmentTransaction;
+>>>>>>> Zohar
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< HEAD
 
 import com.example.myapplication.R;
 
@@ -62,5 +67,31 @@ public class ForgotPassword extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_forgot_password, container, false);
+=======
+import android.widget.Button;
+
+import com.example.myapplication.R;
+import com.example.myapplication.ui.ui.login.LoginFragment;
+
+public class ForgotPassword extends Fragment {
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view;
+        view = inflater.inflate(R.layout.fragment_forgot_password,container,false);
+        Button btnFragment=(Button)view.findViewById(R.id.button);
+
+        btnFragment.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View V){
+                assert getFragmentManager() != null;
+                FragmentTransaction fr=getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container,new PasswordReset());
+                fr.commit();
+            }
+        });
+        return view;
+>>>>>>> Zohar
     }
 }
