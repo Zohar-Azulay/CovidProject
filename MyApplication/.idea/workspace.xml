@@ -30,6 +30,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="7adbfa42-af77-488a-abc9-ec2a6ec870d6" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/app/google-services (1).json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/HomeAdmin.java" afterDir="false" />
@@ -86,6 +87,9 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_reg_v.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
+=======
+    <list default="true" id="7adbfa42-af77-488a-abc9-ec2a6ec870d6" name="Default Changelist" comment="" />
+>>>>>>> b1d2a01309cd65c4e2e226e8106cdda8470406df
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
