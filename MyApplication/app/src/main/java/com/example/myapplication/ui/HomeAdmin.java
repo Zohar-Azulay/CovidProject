@@ -12,10 +12,10 @@ import com.example.myapplication.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Reg_v#newInstance} factory method to
+ * Use the {@link HomeAdmin#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Reg_v extends Fragment {
+public class HomeAdmin extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class Reg_v extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Reg_v() {
+    public HomeAdmin() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class Reg_v extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Reg_v.
+     * @return A new instance of fragment HomeAdmin.
      */
     // TODO: Rename and change types and number of parameters
-    public static Reg_v newInstance(String param1, String param2) {
-        Reg_v fragment = new Reg_v();
+    public static HomeAdmin newInstance(String param1, String param2) {
+        HomeAdmin fragment = new HomeAdmin();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class Reg_v extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reg_a, container, false);
+        return inflater.inflate(R.layout.fragment_home_admin, container, false);
     }
 }
