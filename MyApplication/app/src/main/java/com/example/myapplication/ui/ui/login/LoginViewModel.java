@@ -9,13 +9,30 @@ import android.util.Patterns;
 import com.example.myapplication.ui.data.LoginRepository;
 import com.example.myapplication.ui.data.Result;
 import com.example.myapplication.ui.data.model.LoggedInUser;
+<<<<<<< HEAD
 import com.example.myapplication.R;
+=======
+<<<<<<< HEAD
+import com.example.myapplication.ui.R;
+>>>>>>> main
 
 public class LoginViewModel extends ViewModel {
 
     private MutableLiveData<LoginFormState> loginFormState = new MutableLiveData<>();
     private MutableLiveData<LoginResult> loginResult = new MutableLiveData<>();
     private LoginRepository loginRepository;
+<<<<<<< HEAD
+=======
+=======
+import com.example.myapplication.R;
+
+public class LoginViewModel extends ViewModel {
+
+    private final MutableLiveData<LoginFormState> loginFormState = new MutableLiveData<>();
+    private final MutableLiveData<LoginResult> loginResult = new MutableLiveData<>();
+    private final LoginRepository loginRepository;
+>>>>>>> Zohar
+>>>>>>> main
 
     LoginViewModel(LoginRepository loginRepository) {
         this.loginRepository = loginRepository;

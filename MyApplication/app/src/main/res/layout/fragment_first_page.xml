@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+>>>>>>> Zohar
+>>>>>>> main
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+<<<<<<< HEAD
     tools:context=".ui.FirstPage">
 
+=======
+<<<<<<< HEAD
+    tools:context=".ui.FirstPage">
+
+=======
+    android:background="@drawable/background"
+    tools:context=".ui.FirstPage">
+
+
+>>>>>>> Zohar
+>>>>>>> main
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="139dp"
         android:text="ברוך הבא לCov-Aid תודה שהצטרפת אלינו!"
         android:textAlignment="center"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        android:textColor="#FFFFFF"
+>>>>>>> Zohar
+>>>>>>> main
         android:textSize="36sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
@@ -20,7 +46,15 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="185dp"
+<<<<<<< HEAD
         android:background="#FFF7F7"
+=======
+<<<<<<< HEAD
+        android:background="#FFF7F7"
+=======
+        android:background="#00FFF7F7"
+>>>>>>> Zohar
+>>>>>>> main
         android:backgroundTintMode="add"
         android:src="@drawable/whatsapp_image_2020_11_11_at_15_04_52"
         android:visibility="visible"

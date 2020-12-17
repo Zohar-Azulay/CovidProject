@@ -1,12 +1,30 @@
 package com.example.myapplication.ui;
 
+<<<<<<< HEAD
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+=======
+<<<<<<< HEAD
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+=======
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+>>>>>>> Zohar
+>>>>>>> main
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
 
 import com.example.myapplication.R;
 
@@ -56,11 +74,50 @@ public class FirstPage extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+<<<<<<< HEAD
+=======
+=======
+import android.widget.Button;
+
+import com.example.myapplication.R;
+import com.example.myapplication.ui.ui.login.LoginFragment;
+
+
+public class FirstPage extends Fragment {
+>>>>>>> Zohar
+>>>>>>> main
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+<<<<<<< HEAD
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_first_page, container, false);
     }
+=======
+<<<<<<< HEAD
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_first_page, container, false);
+    }
+=======
+        View view;
+        view = inflater.inflate(R.layout.fragment_first_page,container,false);
+        Button btnFragment=(Button)view.findViewById(R.id.button3);
+
+        btnFragment.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View V){
+                assert getFragmentManager() != null;
+                FragmentTransaction fr=getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container,new LoginFragment());
+                fr.commit();
+            }
+        });
+        return view;
+
+    }
+
+
+>>>>>>> Zohar
+>>>>>>> main
 }
