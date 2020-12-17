@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4B7CC"
+    android:orientation="vertical"
+    tools:context=".ui.HomeAdmin">
+
+    <TextView
+        android:id="@+id/homePage"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="דף הבית"
+        android:textColor="#0B0B0B"
+        android:textSize="36sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/openReq"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="70dp"
+            android:text="הצגת בקשות פתוחות" />
+
+        <Button
+            android:id="@+id/rtd"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="70dp"
+            android:text="דיווח למפתחים על בעיות בתוכנה" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/msg"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="70dp"
+            android:text="שליחת הודעת תפוצה" />
+
+        <Button
+            android:id="@+id/edit"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="70dp"
+            android:text="עריכת פרטים אישיים" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/reports"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="70dp"
+            android:text="הפקת דוחות" />
+
+        <Button
+            android:id="@+id/deleteUser"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="70dp"
+            android:text="מחיקת משתמשים" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/logOut"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="70dp"
+            android:text="התנתקות " />
+
+        <Button
+            android:id="@+id/welfare"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="70dp"
+            android:text="גורמי רווחה" />
+    </LinearLayout>
+
+</LinearLayout>
