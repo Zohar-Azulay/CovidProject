@@ -36,6 +36,7 @@ public class LoginFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_login, container, false);
         Button btnFragment=(Button)view.findViewById(R.id.button5);
+
         btnFragment.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View V){
@@ -45,6 +46,7 @@ public class LoginFragment extends Fragment {
                 fr.commit();
             }
         });
+
         return view;
     }
 
