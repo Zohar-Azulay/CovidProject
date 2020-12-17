@@ -15,7 +15,7 @@
         android:layout_height="139dp"
         android:text="ברוך הבא לCov-Aid תודה שהצטרפת אלינו!"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="#FFFFF0"
         android:textSize="36sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
