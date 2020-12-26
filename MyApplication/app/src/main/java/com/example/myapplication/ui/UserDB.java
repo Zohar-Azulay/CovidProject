@@ -4,15 +4,19 @@ import android.util.Log;
 
 public class UserDB {
 
-    private String userID;
+    static int userID = 1;
     private String name;
     private String city;
-    private int birthYear;
+    private String birthYear;
     private String email;
     private String phone;
     private String userType;
     private String password;
 
+    public UserDB(){
+        userID++;
+    }
+/*
     public UserDB(String userID, String name, String city, int birthYear, String email,String phone, String userType,String password){
         this.userID = userID;
         this.name = name;
@@ -29,9 +33,9 @@ public class UserDB {
         this.email = email;
         this.phone = phone;
         this.password = password;
-    }
+    }*/
 
-    public String getUserID(){
+    public int getUserID(){
         return this.userID;
     }
 
@@ -41,7 +45,7 @@ public class UserDB {
     public String getCity(){
         return this.city;
     }
-    public int getBirthYear(){
+    public String getBirthYear(){
         return this.birthYear;
     }
 
@@ -54,17 +58,18 @@ public class UserDB {
     public String getUserType(){
         return this.userType;
     }
-
-    public void setUserID(String id){
-        userID = id;
+    public String getPassword() {
+        return password;
     }
+
+
     public void setName(String name){
        this.name = name;
     }
     public void setCity(String city){
         this.city = city;
     }
-    public void setBirthYear(int birthYear){
+    public void setBirthYear(String birthYear){
         this.birthYear = birthYear;
     }
     public void setEmail(String email){
@@ -75,6 +80,9 @@ public class UserDB {
     }
     public void setUserType(String userType){
         this.userType = userType;
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
