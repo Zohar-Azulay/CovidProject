@@ -19,10 +19,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-
+    private TextView reg_screen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +33,26 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
 
-        fragmentTransaction.add(R.id.fragment_container, new main_p());
+        fragmentTransaction.add(R.id.fragment_container, new FirstPage());
         fragmentTransaction.commit();
+
+        reg_screen = (TextView) findViewById(R.id.chooseHelp);
+        reg_screen.setOnClickListener(this);
+
         }
 
-//    @Override
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.chooseHelp:
+                startActivity(new Intent(this, reg_p.class));
+                break;
+
+
+        }
+    }
+
+    //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //
 //        getMenuInflater().inflate(R.menu.mymenu,);

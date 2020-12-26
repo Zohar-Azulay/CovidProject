@@ -14,8 +14,7 @@
     <string name="fullname">שם מלא</string>
     <string name="fullname_hint">שם פרטי ושם משפחה</string>
     <string name="yearofbirth">שנת לידה</string>
-    <string name="address">כתובת</string>
-    <string name="address_residance">כתובת מגורים</string>
+    <string name="city">עיר</string>
     <string name="email">מייל</string>
     <string name="email_hint">כתובת דואר אלקטרוני</string>
     <string name="cellphone">מס. טלפון</string>
@@ -41,5 +40,5 @@
     <string name="support_icon">עזרה</string>
     <string name="send_support">שלח</string>
     <string name="support_hint">רשום פה מה שאתה רוצה שנדע...</string>
-
+    <string name="cellphone_hint"> </string>
 </resources>
