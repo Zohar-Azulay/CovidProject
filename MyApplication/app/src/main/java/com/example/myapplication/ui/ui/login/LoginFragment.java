@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 
+
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -35,13 +36,13 @@ public class LoginFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_login, container, false);
-        Button btnFragment=(Button)view.findViewById(R.id.button5);
+        Button btnFragment=(Button)view.findViewById(R.id.pick_forgot_password);
 
         btnFragment.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View V){
-                assert getFragmentManager() != null;
-                FragmentTransaction fr=getFragmentManager().beginTransaction();
+                assert getChildFragmentManager() != null;
+                FragmentTransaction fr=getChildFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container,new ForgotPassword());
                 fr.commit();
             }
@@ -56,12 +57,12 @@ public class LoginFragment extends Fragment {
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
-        final EditText usernameEditText = view.findViewById(R.id.username);
+        final EditText usernameEditText = view.findViewById(R.id.email);
         final EditText passwordEditText = view.findViewById(R.id.password);
-        final Button loginButton = view.findViewById(R.id.login);
+        final Button loginButton = view.findViewById(R.id.login_v2);
         final ProgressBar loadingProgressBar = view.findViewById(R.id.loading);
 
-        loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
+        loginViewModel.getLoginFormState().observe(getViewLifecycleOwner(), new Observer<LoginFormState>() {
             @Override
             public void onChanged(@Nullable LoginFormState loginFormState) {
                 if (loginFormState == null) {
@@ -77,7 +78,7 @@ public class LoginFragment extends Fragment {
             }
         });
 
-        loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
+        loginViewModel.getLoginResult().observe(getViewLifecycleOwner(), new Observer<LoginResult>() {
             @Override
             public void onChanged(@Nullable LoginResult loginResult) {
                 if (loginResult == null) {

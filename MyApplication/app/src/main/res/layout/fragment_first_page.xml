@@ -31,7 +31,7 @@
         tools:ignore="ContentDescription" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/pick_signup"
         android:layout_width="257dp"
         android:layout_height="146dp"
         android:layout_gravity="center_horizontal"
@@ -41,7 +41,7 @@
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/pick_login"
         android:layout_width="257dp"
         android:layout_height="146dp"
         android:layout_gravity="center_horizontal"

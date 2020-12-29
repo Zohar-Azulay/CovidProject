@@ -27,11 +27,11 @@ public class PickReg extends Fragment {
         Button hp=view.findViewById(R.id.chooseHelp);
 
         Button ad= view.findViewById(R.id.chooseAdmin);
-
+//temp
         vl.setOnClickListener(V -> {
             assert getFragmentManager() != null;
             FragmentTransaction fr1=getFragmentManager().beginTransaction();
-            fr1.replace(R.id.fragment_container,new LoginFragment());//update after u get reg page of vl
+            fr1.replace(R.id.fragment_container,new LoginV2());//update after u get reg page of vl
             fr1.commit();
         });
         hp.setOnClickListener(V -> {

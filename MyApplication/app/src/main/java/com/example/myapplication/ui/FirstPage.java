@@ -1,6 +1,5 @@
 package com.example.myapplication.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -22,15 +21,15 @@ public class FirstPage extends Fragment {
                              Bundle savedInstanceState) {
         View view;
         view = inflater.inflate(R.layout.fragment_first_page,container,false);
-        Button btnFragment=(Button)view.findViewById(R.id.button3);
-        Button reg=(Button)view.findViewById(R.id.button2);
+        Button btnFragment=(Button)view.findViewById(R.id.pick_login);
+        Button reg=(Button)view.findViewById(R.id.pick_signup);
 
         btnFragment.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View V){
                 assert getFragmentManager() != null;
                 FragmentTransaction fr=getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container,new LoginFragment());
+                fr.replace(R.id.fragment_container,new LoginV2());
                 fr.commit();
             }
         });

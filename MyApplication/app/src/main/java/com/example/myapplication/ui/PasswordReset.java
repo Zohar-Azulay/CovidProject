@@ -26,7 +26,7 @@ public class PasswordReset extends Fragment {
             public void onClick(View V){
                 assert getFragmentManager() != null;
                 FragmentTransaction fr=getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container,new LoginFragment());
+                fr.replace(R.id.fragment_container,new LoginV2());
                 fr.commit();
             }
         });

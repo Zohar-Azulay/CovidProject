@@ -25,8 +25,8 @@ public class ForgotPassword extends Fragment {
         btnFragment.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View V){
-                assert getFragmentManager() != null;
-                FragmentTransaction fr=getFragmentManager().beginTransaction();
+                assert getChildFragmentManager() != null;
+                FragmentTransaction fr=getChildFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container,new PasswordReset());
                 fr.commit();
             }
