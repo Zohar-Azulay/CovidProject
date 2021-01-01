@@ -1,7 +1,9 @@
 package com.example.myapplication.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -9,28 +11,88 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.myapplication.R;
-import com.example.myapplication.ui.ui.login.LoginFragment;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ForgotPassword extends Fragment {
+
+    private View objectForgotFragment;
+    private Button resetPassword;
+    private EditText resetEMailInput;
+
+    private FirebaseAuth mAuth;
+
+    public ForgotPassword(){
+        //empty
+    }
+
+    private void initializeVariables(){
+        try{
+            mAuth=FirebaseAuth.getInstance();
+            resetEMailInput=objectForgotFragment.findViewById(R.id.resetEmail);
+            resetPassword=objectForgotFragment.findViewById(R.id.resetPassBtn);
+
+            resetPassword.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    resPass();
+                    assert getFragmentManager() != null;
+                    FragmentTransaction fr=getFragmentManager().beginTransaction();
+                    fr.replace(R.id.fragment_container,new LoginV2());
+                    fr.commit();
+                }
+            });
+        }
+        catch (Exception e){
+            Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+        }
+    }
+    private void resPass()
+    {
+        try {
+            if (!resetEMailInput.getText().toString().isEmpty()) {
+                if (mAuth != null) {
+                    resetPassword.setEnabled(false);
+                    mAuth.sendPasswordResetEmail(resetEMailInput.getText().toString())
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(getContext(), "Please check your email for reset", Toast.LENGTH_LONG).show();
+
+                                    }
+                                }
+                            });
+                }
+                else {
+                    Toast.makeText(getContext(), "Please enter your email first", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+        catch (Exception e){
+            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view;
-        view = inflater.inflate(R.layout.fragment_forgot_password,container,false);
-        Button btnFragment=(Button)view.findViewById(R.id.button);
-
-        btnFragment.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View V){
-                assert getChildFragmentManager() != null;
-                FragmentTransaction fr=getChildFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container,new PasswordReset());
-                fr.commit();
-            }
-        });
-        return view;
+        objectForgotFragment=inflater.inflate(R.layout.fragment_forgot_password,container,false);
+        initializeVariables();
+//        assert getFragmentManager() != null;
+//        FragmentTransaction fr=getFragmentManager().beginTransaction();
+//        fr.replace(R.id.fragment_container,new PasswordReset());
+//        fr.commit();
+        return objectForgotFragment;
     }
 }

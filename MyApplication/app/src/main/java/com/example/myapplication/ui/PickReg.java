@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.myapplication.R;
-import com.example.myapplication.ui.ui.login.LoginFragment;
+
 
 
 public class PickReg extends Fragment {

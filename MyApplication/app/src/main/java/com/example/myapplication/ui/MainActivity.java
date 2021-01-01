@@ -22,7 +22,7 @@ import com.google.firebase.database.Query;
 
 public class MainActivity extends AppCompatActivity {
     //Firebase
-    private FirebaseAuth mAuth;
+
 
 
     @Override

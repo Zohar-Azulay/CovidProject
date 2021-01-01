@@ -52,13 +52,13 @@ public class LoginV2 extends Fragment {
     private  void initializeVariables(){
         try{
             objectFirebaseAuth=FirebaseAuth.getInstance();
-            userEmailET=objectSignInFragment.findViewById(R.id.email);
 
+            userEmailET=objectSignInFragment.findViewById(R.id.email);
             userPasswordET=objectSignInFragment.findViewById(R.id.password);
             signInBtn=objectSignInFragment.findViewById(R.id.login_v2);
             forgotBtn = objectSignInFragment.findViewById(R.id.pick_forgot_password);
-
             objectProgressBar=objectSignInFragment.findViewById(R.id.loading);
+
             signInBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -74,7 +74,6 @@ public class LoginV2 extends Fragment {
                     fr.commit();
                 }
             });
-
         }
         catch (Exception e){
             Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
@@ -107,7 +106,7 @@ public class LoginV2 extends Fragment {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             objectProgressBar.setVisibility(View.INVISIBLE);
-
+                            
                             signInBtn.setEnabled(true);
                             Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
                         }
@@ -128,6 +127,7 @@ public class LoginV2 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         objectSignInFragment=inflater.inflate(R.layout.fragment_login_v2,container,false);
         initializeVariables();
+
         return objectSignInFragment;
     }
 }
