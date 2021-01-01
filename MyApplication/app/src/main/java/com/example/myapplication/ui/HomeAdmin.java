@@ -1,66 +1,89 @@
 package com.example.myapplication.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.myapplication.R;
+import com.google.firebase.FirebaseApp;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HomeAdmin#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class HomeAdmin extends Fragment {
+import java.lang.ref.WeakReference;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class HomeAdmin extends AppCompatActivity implements View.OnClickListener {
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private int id = 1;
+    private Button openReq, rtd, msg, edit, reports,deleteUser, logOut, welfare;
 
-    public HomeAdmin() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeAdmin.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HomeAdmin newInstance(String param1, String param2) {
-        HomeAdmin fragment = new HomeAdmin();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        setContentView(R.layout.fragment_home_admin);
+
+        if(getIntent().hasExtra("id"))
+            id = getIntent().getIntExtra("id",0);
+
+        openReq = (Button) findViewById(R.id.openReq);
+        rtd = (Button) findViewById(R.id.rtd);
+        msg = (Button) findViewById(R.id.msg);
+        edit = (Button) findViewById(R.id.edit);
+        reports = (Button) findViewById(R.id.reports);
+        deleteUser = (Button) findViewById(R.id.deleteUser);
+        logOut = (Button) findViewById(R.id.logOut);
+        welfare = (Button) findViewById(R.id.welfare);
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               openActivity(EditPersonalDetails.class);
+            }
+        });
+
+        rtd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(ReportToDevelopers.class);
+            }
+        });
+
+        openReq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(openReq.class);
+            }
+        });
+
+        deleteUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(DeleteUsers.class);
+            }
+        });
+
+        welfare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(WeakReference.class);
+            }
+        });
     }
 
+    public void openActivity(Class activityClass){
+        Intent intent = new Intent(this, activityClass);
+        intent.putExtra("id",id);
+        startActivity(intent);
+    }
+
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_admin, container, false);
+    public void onClick(View v) {
+
     }
 }

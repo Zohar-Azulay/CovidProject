@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDAFC4"
+    tools:context=".ui.WelfareFactors">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ECB8CA"
+            android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/welfare1"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="גורמי רווחה"
+            android:textColor="#090909"
+            android:textSize="30sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="496dp"
+            android:layout_marginTop="15dp">
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/reportBtn"
+            android:layout_width="237dp"
+            android:layout_height="63dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="חזרה לדף הבית"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+</FrameLayout>
+
+
+

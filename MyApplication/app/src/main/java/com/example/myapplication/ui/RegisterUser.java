@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
     private EditText name, email, password, phone;
     private String TAG = "RegisterUser";
+    private CheckBox terms;
 
     private DatabaseReference reff;
     private UserDB userObj;
@@ -61,6 +63,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         phone = (EditText) findViewById(R.id.phoneInput);
         city = (Spinner) findViewById(R.id.citySpinner);
         year = (Spinner) findViewById(R.id.yearSpinner);
+        terms = (CheckBox) findViewById(R.id.termsCheck1);
 
         Button singup = (Button) findViewById(R.id.btn1);
         singup.setOnClickListener(this);
@@ -68,31 +71,12 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         userObj = new UserDB();
         reff = FirebaseDatabase.getInstance().getReference().child("משתמשים");
 
-        showDataSpinner();
+        showDataCitySpinner();
+        showDataYearSpinner();
 
     }
 
-    private void showDataSpinner() {
-
-        reffSpinnerCity.child("ערים").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //city
-                cityArrayList.clear();
-                for(DataSnapshot item: snapshot.getChildren())
-                    cityArrayList.add(item.child("עיר").getValue(String.class));
-
-
-                ArrayAdapter<String> arrayAdapterCity = new ArrayAdapter<>(RegisterUser.this, android.R.layout.simple_spinner_dropdown_item,cityArrayList);
-                city.setAdapter(arrayAdapterCity);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
+    private void showDataYearSpinner() {
         reffSpinnerYear.child("שנת לידה").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -109,10 +93,28 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            } });
+    }
+
+    private void showDataCitySpinner() {
+        reffSpinnerCity.child("ערים").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //city
+                cityArrayList.clear();
+                for(DataSnapshot item: snapshot.getChildren())
+                    cityArrayList.add(item.child("עיר").getValue(String.class));
+
+                ArrayAdapter<String> arrayAdapterCity = new ArrayAdapter<>(RegisterUser.this, android.R.layout.simple_spinner_dropdown_item,cityArrayList);
+                city.setAdapter(arrayAdapterCity);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-
     }
+
 
     @Override
     public void onClick(View v) {
@@ -124,8 +126,13 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         String cityStr = city.getSelectedItem().toString();
         String yearStr = year.getSelectedItem().toString();
 
+
         if(wrongInput(nameStr,phoneStr,passStr,emailStr,cityStr,yearStr))
             Toast.makeText(RegisterUser.this,"אחד השדות לא תקינים,נסה שוב!",Toast.LENGTH_LONG).show();
+        else if(!terms.isChecked())
+            Toast.makeText(RegisterUser.this,"יש לאשר את תנאי השימוש!",Toast.LENGTH_LONG).show();
+     //   else if(userExist(nameStr, phoneStr, yearStr))
+     //       Toast.makeText(RegisterUser.this,"המשתמש קיים במערכת!",Toast.LENGTH_LONG).show();
         else {
             userObj.setName(nameStr);
             userObj.setPhone(phoneStr);
@@ -134,35 +141,53 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             userObj.setCity(cityStr);
             userObj.setBirthYear(yearStr);
 
-            //String id = String.valueOf(userObj.getUserID());
-            reff.child(userObj.getName()).setValue(userObj);
+            String id = String.valueOf(userObj.getUserID());
+            reff.child(id).setValue(userObj);
 
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, EditPersonalDetails.class);
             startActivity(intent);
-                /*ValueEventListener postListener = new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                       if(snapshot.exists())
 
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                }*/
         }
+
+    }
+
+    // שם טלפון שנת לידה
+    private void userExist(String nameStr, String phoneStr, String yearStr) {
+        reff = FirebaseDatabase.getInstance().getReference().child("משתמשים");
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String dbName, dbPhone, dbYear;
+                for (DataSnapshot item : snapshot.getChildren()) {
+                    dbName = item.child("name").getValue(String.class);
+                    if(nameStr.equals(dbName)){
+                        dbPhone = item.child("phone").getValue(String.class);
+                        if(phoneStr.equals(dbPhone)){
+                            dbYear = item.child("birthYear").getValue(String.class);
+                            if(yearStr.equals(dbYear)) {
+                                Log.d("MSG","user exists");
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 
     }
 
 
     private boolean wrongInput(String nameStr, String phoneStr, String passStr, String emailStr, String cityStr, String yearStr){
-
         boolean flag = false;
 
-
         if(cityStr.equals("--בחר עיר--")){
-            name.setError("שדה חובה");
             name.requestFocus();
             flag = true;
         }
@@ -213,7 +238,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         if(register()) {
-                            Intent intent = new Intent(this, MainActivity.class);
+                            Intent intent = new Intent(this,EditPersonalDetails.class);
                             startActivity(intent);
                         }
                     }

@@ -4,7 +4,8 @@ import android.util.Log;
 
 public class UserDB {
 
-    static int userID = 1;
+    static int count = 1;
+    private int userID = 0;
     private String name;
     private String city;
     private String birthYear;
@@ -14,7 +15,8 @@ public class UserDB {
     private String password;
 
     public UserDB(){
-        userID++;
+
+        userID = count++;
     }
 /*
     public UserDB(String userID, String name, String city, int birthYear, String email,String phone, String userType,String password){
@@ -87,14 +89,17 @@ public class UserDB {
 
     @Override
     public String toString() {
-        return "UserDB{" +
+       return name + ", " + city;
+
+       /* return "UserDB{" +
                 "userID='" + userID + '\'' +
+                ", name='" + name + '\'' +
                 ", name='" + name + '\'' +
                 ", city='" + city + '\'' +
                 ", birthYear=" + birthYear +
                 ", email='" + email + '\'' +
                 ", phone=" + phone +
                 ", userType='" + userType + '\'' +
-                '}';
+                '}';*/
     }
 }

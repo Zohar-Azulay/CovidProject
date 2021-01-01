@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.openReq">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ECB8CA"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/openRequests"
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:gravity="center"
+            android:text="בקשות פתוחות"
+            android:textColor="#101010"
+            android:textSize="36sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="504dp"
+            android:layout_marginTop="15dp">
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="243dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="חזרה לדף הבית"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+</FrameLayout>
