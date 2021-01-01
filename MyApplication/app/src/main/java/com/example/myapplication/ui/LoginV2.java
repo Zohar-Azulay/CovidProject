@@ -70,7 +70,7 @@ public class LoginV2 extends Fragment {
                 public void onClick(View v) {
                     assert getFragmentManager() != null;
                     FragmentTransaction fr=getFragmentManager().beginTransaction();
-                    fr.replace(R.id.fragment_container,new ForgotPassword());
+                    fr.replace(R.id.fragment_container,new ForgotPassword()).addToBackStack("forgot-password");
                     fr.commit();
                 }
             });

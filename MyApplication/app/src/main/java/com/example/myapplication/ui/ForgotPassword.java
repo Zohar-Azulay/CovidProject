@@ -47,7 +47,7 @@ public class ForgotPassword extends Fragment {
                     resPass();
                     assert getFragmentManager() != null;
                     FragmentTransaction fr=getFragmentManager().beginTransaction();
-                    fr.replace(R.id.fragment_container,new LoginV2());
+                    fr.replace(R.id.fragment_container,new LoginV2()).addToBackStack("password-reset");
                     fr.commit();
                 }
             });

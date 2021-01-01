@@ -1,7 +1,9 @@
 package com.example.myapplication.ui;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.app.Fragment;
@@ -10,7 +12,6 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication.R;
@@ -34,8 +35,19 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
 
-        fragmentTransaction.add(R.id.fragment_container,new FirstPage());
+        fragmentTransaction.add(R.id.fragment_container,new FirstPage()).addToBackStack("first page");
+
         fragmentTransaction.commit();
     }
-
+    @Override
+    public void onBackPressed(){
+        FragmentManager fm = getFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            Log.i("MainActivity", "popping backstack");
+            fm.popBackStack();
+        } else {
+            Log.i("MainActivity", "nothing on backstack, calling super");
+            super.onBackPressed();
+        }
+    }
 }
