@@ -31,7 +31,7 @@ public class PickReg extends Fragment {
         vl.setOnClickListener(V -> {
             assert getFragmentManager() != null;
             FragmentTransaction fr1=getFragmentManager().beginTransaction();
-            fr1.replace(R.id.fragment_container,new LoginV2());//update after u get reg page of vl
+            fr1.replace(R.id.fragment_container,new reg_v());//update after u get reg page of vl
             fr1.commit();
         });
         hp.setOnClickListener(V -> {

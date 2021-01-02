@@ -28,7 +28,7 @@ public class ForgotPassword extends Fragment {
     private View objectForgotFragment;
     private Button resetPassword;
     private EditText resetEMailInput;
-
+    //private boolean flag;
     private FirebaseAuth mAuth;
 
     public ForgotPassword(){
@@ -44,11 +44,16 @@ public class ForgotPassword extends Fragment {
             resetPassword.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    resetPassword.setClickable(false);
                     resPass();
-                    assert getFragmentManager() != null;
-                    FragmentTransaction fr=getFragmentManager().beginTransaction();
-                    fr.replace(R.id.fragment_container,new LoginV2()).addToBackStack("password-reset");
-                    fr.commit();
+//                    if(flag) {
+//                        assert getFragmentManager() != null;
+//                        FragmentTransaction fr = getFragmentManager().beginTransaction();
+//                        fr.replace(R.id.fragment_container, new LoginV2()).addToBackStack("password-reset");
+//                        fr.commit();
+//                    }
+//                    else
+//                        resetPassword.setClickable(true);
                 }
             });
         }
@@ -59,24 +64,40 @@ public class ForgotPassword extends Fragment {
     private void resPass()
     {
         try {
+
             if (!resetEMailInput.getText().toString().isEmpty()) {
                 if (mAuth != null) {
-                    resetPassword.setEnabled(false);
+                    //resetPassword.setEnabled(false);
                     mAuth.sendPasswordResetEmail(resetEMailInput.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
+                                        //flag=true;
+                                        resetPassword.setEnabled(false);
                                         Toast.makeText(getContext(), "Please check your email for reset", Toast.LENGTH_LONG).show();
+                                        assert getFragmentManager() != null;
 
+                                        FragmentTransaction fr = getFragmentManager().beginTransaction();
+                                        fr.replace(R.id.fragment_container, new LoginV2()).addToBackStack("password-reset");
+                                        fr.commit();
+                                    }
+                                    else{
+                                        resetPassword.setEnabled(true);
+                                        Toast.makeText(getContext(), "Entered email does not exist", Toast.LENGTH_LONG).show();
+                                        resPass();
                                     }
                                 }
-                            });
+                    });
                 }
-                else {
-                    Toast.makeText(getContext(), "Please enter your email first", Toast.LENGTH_SHORT).show();
-                }
+
             }
+            else {
+                Toast.makeText(getContext(), "Please enter your email first", Toast.LENGTH_SHORT).show();
+
+            }
+
+
         }
         catch (Exception e){
             Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();

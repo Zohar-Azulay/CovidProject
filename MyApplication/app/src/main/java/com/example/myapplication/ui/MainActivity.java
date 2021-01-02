@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
 
-        fragmentTransaction.add(R.id.fragment_container,new FirstPage()).addToBackStack("first page");
+        fragmentTransaction.add(R.id.fragment_container,new FirstPage());
 
         fragmentTransaction.commit();
     }

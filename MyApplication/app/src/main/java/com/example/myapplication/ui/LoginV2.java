@@ -95,7 +95,7 @@ public class LoginV2 extends Fragment {
                                 public void onSuccess(AuthResult authResult) {
                                     startActivity(new Intent(getActivity().getApplicationContext(),HomePage.class));
                                     objectProgressBar.setVisibility(View.INVISIBLE);
-
+                                    
                                     signInBtn.setEnabled(true);
                                     getActivity().finish();
                                 }
