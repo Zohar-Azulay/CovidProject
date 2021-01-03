@@ -2,11 +2,16 @@ package com.example.myapplication.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.example.myapplication.R;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,10 +24,11 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HomePageV extends AppCompatActivity {
 
-    FirebaseAuth objectFirebaseAuth;
-    TextView userName,Uid,uType;
+    FirebaseAuth mAuth;
+
     Button signOut;
     DatabaseReference ref;
+
 
 
     @Override
@@ -30,39 +36,37 @@ public class HomePageV extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page_v);
 
-        objectFirebaseAuth=FirebaseAuth.getInstance();
-        uType=findViewById(R.id.user_Type);
+        mAuth=FirebaseAuth.getInstance();
+
         signOut=findViewById(R.id.signOut);
-        userName=findViewById(R.id.userName);
-        Uid=findViewById(R.id.Uid);
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
 
-        if(objectFirebaseAuth!=null){
-            String currentUser=objectFirebaseAuth.getCurrentUser().getEmail();
-            userName.setText(currentUser);
+        fragmentTransaction.add(R.id.fragment_container_v,new HomeFragmentV());
 
-            String currentUse=objectFirebaseAuth.getCurrentUser().getUid();
-            Uid.setText(currentUse);
-            ref=FirebaseDatabase.getInstance().getReference().child("משתמשים").child(currentUse);
-            ref.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    String user_Type=snapshot.child("userType").getValue().toString();
-                    uType.setText(user_Type);
-                }
+        fragmentTransaction.commit();
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
 
-                }
-            });
-        }
         signOut.setOnClickListener(new View.OnClickListener() {
         @Override
             public void onClick(View v) {
-                objectFirebaseAuth.signOut();
+                mAuth.signOut();
                 startActivity(new Intent(HomePageV.this,MainActivity.class));
                 finish();
             }
         });
+    }
+
+
+
+    @Override
+    public void onBackPressed(){
+        FragmentManager fm = getFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            Log.i("MainActivity", "popping backstack");
+            fm.popBackStack();
+        } else {
+            Log.i("MainActivity", "nothing on backstack, calling super");
+            super.onBackPressed();
+        }
     }
 }
