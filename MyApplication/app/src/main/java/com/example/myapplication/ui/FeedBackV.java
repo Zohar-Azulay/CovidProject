@@ -12,10 +12,10 @@ import com.example.myapplication.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link reg_v#newInstance} factory method to
+ * Use the {@link FeedBackV#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class reg_v extends Fragment {
+public class FeedBackV extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class reg_v extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public reg_v() {
+    public FeedBackV() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class reg_v extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment reg_v.
+     * @return A new instance of fragment FeedBackV.
      */
     // TODO: Rename and change types and number of parameters
-    public static reg_v newInstance(String param1, String param2) {
-        reg_v fragment = new reg_v();
+    public static FeedBackV newInstance(String param1, String param2) {
+        FeedBackV fragment = new FeedBackV();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class reg_v extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reg_v, container, false);
+        return inflater.inflate(R.layout.fragment_feed_back_v, container, false);
     }
 }

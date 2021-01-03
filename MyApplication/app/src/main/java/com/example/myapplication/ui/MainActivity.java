@@ -3,10 +3,8 @@ package com.example.myapplication.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
 import android.os.Bundle;
 import androidx.fragment.app.FragmentTransaction;
-import com.google.firebase.FirebaseApp;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
 
-        fragmentTransaction.add(R.id.fragment_container,new FirstPage());
+        fragmentTransaction.add(R.id.fragment_container,new homePageV());
         fragmentTransaction.commit();
     }
 
