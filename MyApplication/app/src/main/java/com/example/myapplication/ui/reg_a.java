@@ -31,16 +31,16 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class reg_v extends Fragment {
+public class reg_a extends Fragment {
     private EditText name, email, phone ,password;
-    private Button signUpBtn;
+    private Button signUpBtnA;
     private CheckBox terms;
     private View objectRegFragment;
     private FirebaseAuth mAuth;
     private DatabaseReference reff;
     private UserDB userObj;
     private String uid;
-    private final String TAG = "reg_v";
+    private final String TAG = "reg_a";
 
 
     //SPINNERS
@@ -50,59 +50,53 @@ public class reg_v extends Fragment {
     private ArrayList<String> yearArrayList = new ArrayList<>();
     private ArrayList<String> cityArrayList = new ArrayList<>();
 
-    public reg_v(){
+    public reg_a(){
         //empty
     }
 
-    private  void initialize(){
+    private  void initializeA(){
         try{
             mAuth= FirebaseAuth.getInstance();
-            name=objectRegFragment.findViewById(R.id.reg_v_name);
-            email=objectRegFragment.findViewById(R.id.reg_v_email);
-            phone=objectRegFragment.findViewById(R.id.reg_v_phone);
-            password=objectRegFragment.findViewById(R.id.reg_v_password);
-            signUpBtn=objectRegFragment.findViewById(R.id.reg_v_finish);
-            terms=objectRegFragment.findViewById(R.id.reg_v_takanon);
-            city =objectRegFragment.findViewById(R.id.reg_v_city);
-            year = objectRegFragment.findViewById(R.id.reg_v_year);
+            name=objectRegFragment.findViewById(R.id.reg_a_name);
+            email=objectRegFragment.findViewById(R.id.reg_a_email);
+            phone=objectRegFragment.findViewById(R.id.reg_a_phone);
+            password=objectRegFragment.findViewById(R.id.reg_a_password);
+            signUpBtnA=objectRegFragment.findViewById(R.id.reg_a_finish);
+            terms=objectRegFragment.findViewById(R.id.reg_a_takanon);
+            city =objectRegFragment.findViewById(R.id.reg_a_city);
+            year = objectRegFragment.findViewById(R.id.reg_a_year);
             showDataCitySpinner();
             showDataYearSpinner();
             userObj = new UserDB();
             reff = FirebaseDatabase.getInstance().getReference().child("משתמשים");
-            signUpBtn.setOnClickListener(v -> signUpUser());
+            signUpBtnA.setOnClickListener(v -> signUpUserA());
 
         }
         catch (Exception e){
             Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
         }
     }
-    private void signUpUser(){
+    private void signUpUserA(){
         try{
             if(!wrongInput(name.getText().toString(),phone.getText().toString(),password.getText().toString(),
                     email.getText().toString(),city.getSelectedItem().toString(),year.getSelectedItem().toString())&&terms.isChecked()){
                 if(mAuth!=null){
-                    signUpBtn.setEnabled(false);
+                    signUpBtnA.setEnabled(false);
                     mAuth.createUserWithEmailAndPassword(email.getText().toString(),
                             password.getText().toString())
-                            .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                                                      @Override
-                                                      public void onSuccess(AuthResult authResult) {
-                                                          Toast.makeText(getContext(), "User created", Toast.LENGTH_SHORT).show();
-                                                          uid=mAuth.getCurrentUser().getUid();
-                                                          updateToDB();
-                                                          startActivity(new Intent(getActivity().getApplicationContext(), HomePageV.class));
-                                                          signUpBtn.setEnabled(true);
-                                                          getActivity().finish();
-                                                      }
-                                                  }
+                            .addOnSuccessListener(authResult -> {
+                                Toast.makeText(getContext(), "User created", Toast.LENGTH_SHORT).show();
+                                uid=mAuth.getCurrentUser().getUid();
+                                updateToDB();
+                                startActivity(new Intent(getActivity().getApplicationContext(), HomePageA.class));
+                                signUpBtnA.setEnabled(true);
+                                getActivity().finish();
+                            }
 
                             )
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    signUpBtn.setEnabled(true);
-                                    Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
-                                }
+                            .addOnFailureListener(e -> {
+                                signUpBtnA.setEnabled(true);
+                                Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
                             });
                 }
             }
@@ -174,7 +168,7 @@ public class reg_v extends Fragment {
         userObj.setEmail(emailStr);
         userObj.setCity(cityStr);
         userObj.setBirthYear(yearStr);
-        userObj.setUserType("1");
+        userObj.setUserType("3");
         userObj.setUserID(uid);
 
 
@@ -220,9 +214,9 @@ public class reg_v extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        objectRegFragment=inflater.inflate(R.layout.fragment_reg_v,container,false);
+        objectRegFragment=inflater.inflate(R.layout.fragment_reg_a,container,false);
 
-        initialize();
+        initializeA();
 
         return objectRegFragment;
     }

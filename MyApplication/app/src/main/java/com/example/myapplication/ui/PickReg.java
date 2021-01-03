@@ -27,23 +27,23 @@ public class PickReg extends Fragment {
         Button hp=view.findViewById(R.id.chooseHelp);
 
         Button ad= view.findViewById(R.id.chooseAdmin);
-//temp
+
         vl.setOnClickListener(V -> {
             assert getFragmentManager() != null;
             FragmentTransaction fr1=getFragmentManager().beginTransaction();
-            fr1.replace(R.id.fragment_container,new reg_v());//update after u get reg page of vl
+            fr1.replace(R.id.fragment_container,new reg_v());
             fr1.commit();
         });
         hp.setOnClickListener(V -> {
             assert getFragmentManager() != null;
             FragmentTransaction fr2=getFragmentManager().beginTransaction();
-            fr2.replace(R.id.fragment_container,new FirstPage());//update after u get reg page of hp
+            fr2.replace(R.id.fragment_container,new reg_p());
             fr2.commit();
         });
         ad.setOnClickListener(V -> {
             assert getFragmentManager() != null;
             FragmentTransaction fr3=getFragmentManager().beginTransaction();
-            fr3.replace(R.id.fragment_container,new ForgotPassword());//update after u get reg page of ad
+            fr3.replace(R.id.fragment_container,new reg_a());
             fr3.commit();
         });
         return view;

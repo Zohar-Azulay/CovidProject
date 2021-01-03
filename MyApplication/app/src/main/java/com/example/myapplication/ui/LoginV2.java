@@ -1,7 +1,5 @@
 package com.example.myapplication.ui;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -16,36 +14,28 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.auth.User;
 
 
 public class LoginV2 extends Fragment {
     private View objectSignInFragment;
     private FirebaseAuth objectFirebaseAuth;
-
+    private DatabaseReference ref;
     private EditText userEmailET,userPasswordET;
     private Button signInBtn,forgotBtn;
     private ProgressBar objectProgressBar;
-
+    private String uid;
     public LoginV2(){
         //empty
     }
@@ -93,11 +83,44 @@ public class LoginV2 extends Fragment {
                             .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                 @Override
                                 public void onSuccess(AuthResult authResult) {
-                                    startActivity(new Intent(getActivity().getApplicationContext(),HomePage.class));
-                                    objectProgressBar.setVisibility(View.INVISIBLE);
-                                    
-                                    signInBtn.setEnabled(true);
-                                    getActivity().finish();
+                                    uid=objectFirebaseAuth.getCurrentUser().getUid();
+                                    ref= FirebaseDatabase.getInstance().getReference().child("משתמשים").child(uid);
+                                    ref.addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            String user_Type=snapshot.child("userType").getValue().toString();
+                                            switch (user_Type) {
+                                                case "1":
+                                                    startActivity(new Intent(getActivity().getApplicationContext(), HomePageV.class));
+                                                    objectProgressBar.setVisibility(View.INVISIBLE);
+
+                                                    signInBtn.setEnabled(true);
+                                                    getActivity().finish();
+                                                    break;
+                                                case "2":
+                                                    startActivity(new Intent(getActivity().getApplicationContext(), HomePageP.class));
+                                                    objectProgressBar.setVisibility(View.INVISIBLE);
+
+                                                    signInBtn.setEnabled(true);
+                                                    getActivity().finish();
+                                                    break;
+                                                case "3":
+                                                    startActivity(new Intent(getActivity().getApplicationContext(), HomePageA.class));
+                                                    objectProgressBar.setVisibility(View.INVISIBLE);
+
+                                                    signInBtn.setEnabled(true);
+                                                    getActivity().finish();
+                                                    break;
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+
+
                                 }
                             }
 
