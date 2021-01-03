@@ -1,5 +1,11 @@
-com/example/myapplication/ui/open_req_p.java
- com.example.myapplication.ui.open_req_p
+com/example/myapplication/ui/PledgerActivity.java
+ com.example.myapplication.ui.PledgerActivity
+com/example/myapplication/ui/new_pledge.java
+ com.example.myapplication.ui.new_pledge
+ com.example.myapplication.ui.new_pledge$1
+com/example/myapplication/ui/edit_details.java
+ com.example.myapplication.ui.edit_details
+ com.example.myapplication.ui.edit_details$1
 com/example/myapplication/BuildConfig.java
  com.example.myapplication.BuildConfig
 com/example/myapplication/ui/ForgotPassword.java
@@ -9,6 +15,8 @@ com/example/myapplication/ui/MainActivity.java
 com/example/myapplication/ui/main_p.java
  com.example.myapplication.ui.main_p
  com.example.myapplication.ui.main_p$1
+ com.example.myapplication.ui.main_p$2
+ com.example.myapplication.ui.main_p$3
 com/example/myapplication/ui/UserDB.java
  com.example.myapplication.ui.UserDB
 com/example/myapplication/ui/fragment_support.java
@@ -17,4 +25,5 @@ com/example/myapplication/ui/fragment_support.java
 com/example/myapplication/ui/reg_p.java
  com.example.myapplication.ui.reg_p
  com.example.myapplication.ui.reg_p$1
- com.example.myapplication.ui.reg_p$1$1
+ com.example.myapplication.ui.reg_p$2
+ com.example.myapplication.ui.reg_p$3

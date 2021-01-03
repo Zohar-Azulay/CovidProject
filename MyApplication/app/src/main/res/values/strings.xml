@@ -14,7 +14,7 @@
     <string name="fullname">שם מלא</string>
     <string name="fullname_hint">שם פרטי ושם משפחה</string>
     <string name="yearofbirth">שנת לידה</string>
-    <string name="city">עיר</string>
+    <string name="city">עיר מגורים</string>
     <string name="email">מייל</string>
     <string name="email_hint">כתובת דואר אלקטרוני</string>
     <string name="cellphone">מס. טלפון</string>
@@ -39,6 +39,18 @@
     </string>
     <string name="support_icon">עזרה</string>
     <string name="send_support">שלח</string>
-    <string name="support_hint">רשום פה מה שאתה רוצה שנדע...</string>
+    <string name="support_hint">רשום פה מה שאתה רוצה שנדע…</string>
     <string name="cellphone_hint"> </string>
+    <string name="edit_details_title">עריכת פרטים אישיים</string>
+    <string name="save_changes">שמור שינויים</string>
+    <string name="new_pledge_title">בקשה חדשה</string>
+    <string name="new_pledge_continue">המשך</string>
+    <string name="new_pledge_details_title">פרטי בקשה חדשה</string>
+    <string name="new_pledge_confirm">פרסם בקשה</string>
+    <string name="title_activity_pledger">PledgerActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>

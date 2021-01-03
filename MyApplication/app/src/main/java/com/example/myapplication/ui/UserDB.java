@@ -7,44 +7,41 @@ public class UserDB {
     private String userID;
     private String name;
     private String city;
-    private int birthYear;
+    private String birthYear;
     private String email;
     private String phone;
     private String userType;
-    private String password;
 
-    public UserDB(String userID, String name, String city, int birthYear, String email,String phone, String userType,String password){
-        this.userID = userID;
-        this.name = name;
-        this.city = city;
-        this.birthYear = birthYear;
-        this.email = email;
-        this.phone = phone;
-        this.userType = userType;
-        this.password = password;
+    public UserDB(){
+        // Empty constructor
     }
 
-    public UserDB(String name, String email, String phone, String password) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.password = password;
-    }
+//    public UserDB(String userID, String name, String city, int birthYear, String email,String phone, String userType, String password){
+//        this.userID = userID;
+//        this.name = name;
+//        this.city = city;
+//        this.birthYear = birthYear;
+//        this.email = email;
+//        this.phone = phone;
+//        this.userType = userType;
+//        this.password = password;
+//    }
 
-    public String getUserID(){
-        return this.userID;
-    }
+//    public UserDB(String name, String email, String phone, String password) {
+//        this.name = name;
+//        this.email = email;
+//        this.phone = phone;
+//        this.password = password;
+//    }
 
-    public String getName(){
-        return this.name;
-    }
+    public String getUserID(){ return this.userID; }
+    public String getName(){ return this.name; }
     public String getCity(){
         return this.city;
     }
-    public int getBirthYear(){
+    public String getBirthYear(){
         return this.birthYear;
     }
-
     public String getEmail(){
         return this.email;
     }
@@ -53,18 +50,16 @@ public class UserDB {
     }
     public String getUserType(){
         return this.userType;
-    }
+    }       // TODO <-- Get firebase's UID -->
 
     public void setUserID(String id){
         userID = id;
     }
-    public void setName(String name){
-        this.name = name;
-    }
+    public void setName(String name){ this.name = name; }
     public void setCity(String city){
         this.city = city;
     }
-    public void setBirthYear(int birthYear){
+    public void setBirthYear(String birthYear){
         this.birthYear = birthYear;
     }
     public void setEmail(String email){
@@ -79,14 +74,15 @@ public class UserDB {
 
     @Override
     public String toString() {
-        return "UserDB{" +
-                "userID='" + userID + '\'' +
-                ", name='" + name + '\'' +
-                ", city='" + city + '\'' +
-                ", birthYear=" + birthYear +
-                ", email='" + email + '\'' +
-                ", phone=" + phone +
-                ", userType='" + userType + '\'' +
-                '}';
+        return name + ", " + city;
+//                "UserDB{" +
+//                "userID='" + userID + '\'' +
+//                ", name='" + name + '\'' +
+//                ", city='" + city + '\'' +
+//                ", birthYear=" + birthYear +
+//                ", email='" + email + '\'' +
+//                ", phone=" + phone +
+//                ", userType='" + userType + '\'' +
+//                '}';
     }
 }
