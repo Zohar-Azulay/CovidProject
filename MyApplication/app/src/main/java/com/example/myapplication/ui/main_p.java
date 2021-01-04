@@ -35,7 +35,7 @@ public class main_p extends Fragment {
             public void onClick(View v) {
                 assert getFragmentManager() != null;
                 FragmentTransaction fr_support = getFragmentManager().beginTransaction();
-                fr_support.replace(R.id.fragment_pledger_container, new fragment_support());
+                fr_support.replace(R.id.fragment_pledger_container, new fragment_support()).addToBackStack("switch to support fragment");
                 fr_support.commit();
             }
         });
@@ -45,7 +45,7 @@ public class main_p extends Fragment {
             public void onClick(View v) {
                 assert getFragmentManager() != null;
                 FragmentTransaction fr_newP = getFragmentManager().beginTransaction();
-                fr_newP.replace(R.id.fragment_pledger_container, new new_pledge());
+                fr_newP.replace(R.id.fragment_pledger_container, new new_pledge()).addToBackStack("switch to new pledge fragment");
                 fr_newP.commit();
             }
         });
@@ -55,7 +55,7 @@ public class main_p extends Fragment {
             public void onClick(View v) {
                 assert getFragmentManager() != null;
                 FragmentTransaction fr_edit = getFragmentManager().beginTransaction();
-                fr_edit.replace(R.id.fragment_pledger_container, new edit_details());
+                fr_edit.replace(R.id.fragment_pledger_container, new edit_details()).addToBackStack("switch to edit details fragment");
                 fr_edit.commit();
             }
         });

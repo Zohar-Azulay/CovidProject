@@ -24,17 +24,16 @@ public class PledgerActivity extends AppCompatActivity {
 
     }
 
-
     @Override
-    public void onBackPressed() {
+    public void onBackPressed(){
         FragmentManager fm = getFragmentManager();
         if (fm.getBackStackEntryCount() > 0) {
             Log.i("MainActivity", "popping backstack");
             fm.popBackStack();
-        }
-        else {
+        } else {
             Log.i("MainActivity", "nothing on backstack, calling super");
             super.onBackPressed();
         }
     }
+
 }

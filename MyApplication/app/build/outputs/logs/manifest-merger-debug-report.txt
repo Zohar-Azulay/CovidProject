@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-48:12
+ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-31:12
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\Gal\.gradle\caches\transforms-2\files-2.1\a662a09f936ef9769e962d90fad0478e\material-1.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.wear:wear:1.1.0] C:\Users\Gal\.gradle\caches\transforms-2\files-2.1\a34a653475b9705fd6adda4a01ac4be4\wear-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Gal\.gradle\caches\transforms-2\files-2.1\e9a7396e1444c212720c909ece4c39d7\constraintlayout-2.0.4\AndroidManifest.xml:2:1-11:12
@@ -73,20 +73,20 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Gal\.gradle\cach
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Gal\.gradle\caches\transforms-2\files-2.1\57b5ae7b4c1e8222c5e1793edd39aefa\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] C:\Users\Gal\.gradle\caches\transforms-2\files-2.1\2b51011fe9aad965b6b85e03be54c687\jetified-protolite-well-known-types-17.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\Gal\.gradle\caches\transforms-2\files-2.1\47a9b793fb482438f4facbefe890c2a3\jetified-grpc-android-1.28.0\AndroidManifest.xml:2:1-13:12
-INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-31:12
 	package
 		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml
 		INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml
-		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-48:12
+		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-31:12
 		INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml
-		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-48:12
+		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:1-31:12
 		INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:2:11-69
@@ -107,7 +107,7 @@ ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.x
 	android:name
 		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:7:19-61
 application
-ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:9:5-46:19
+ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:9:5-29:19
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\Gal\.gradle\caches\transforms-2\files-2.1\a662a09f936ef9769e962d90fad0478e\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\Gal\.gradle\caches\transforms-2\files-2.1\a662a09f936ef9769e962d90fad0478e\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Gal\.gradle\caches\transforms-2\files-2.1\e9a7396e1444c212720c909ece4c39d7\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -168,10 +168,10 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Ga
 		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
 		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:15:9-51
-activity#com.example.myapplication.ui.PledgerActivity
+activity#com.example.myapplication.ui.MainActivity
 ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:17:9-23:20
 	android:name
-		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:17:19-53
+		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:17:19-50
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
@@ -182,6 +182,12 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
 		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:21:27-74
+activity#com.example.myapplication.ui.PledgerActivity
+ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:25:9-27:20
+	android:label
+		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:26:21-67
+	android:name
+		ADDED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml:25:19-53
 uses-sdk
 INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\SE-Projects\CovAid-19\MyApplication\app\src\main\AndroidManifest.xml
