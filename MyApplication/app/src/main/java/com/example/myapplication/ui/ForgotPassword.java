@@ -28,11 +28,10 @@ public class ForgotPassword extends Fragment {
     private View objectForgotFragment;
     private Button resetPassword;
     private EditText resetEMailInput;
-    //private boolean flag;
     private FirebaseAuth mAuth;
 
     public ForgotPassword(){
-        //empty
+        //empty constructor
     }
 
     private void initializeVariables(){
@@ -46,14 +45,6 @@ public class ForgotPassword extends Fragment {
                 public void onClick(View v) {
                     resetPassword.setClickable(false);
                     resPass();
-//                    if(flag) {
-//                        assert getFragmentManager() != null;
-//                        FragmentTransaction fr = getFragmentManager().beginTransaction();
-//                        fr.replace(R.id.fragment_container, new LoginV2()).addToBackStack("password-reset");
-//                        fr.commit();
-//                    }
-//                    else
-//                        resetPassword.setClickable(true);
                 }
             });
         }
@@ -67,7 +58,6 @@ public class ForgotPassword extends Fragment {
 
             if (!resetEMailInput.getText().toString().isEmpty()) {
                 if (mAuth != null) {
-                    //resetPassword.setEnabled(false);
                     mAuth.sendPasswordResetEmail(resetEMailInput.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -110,10 +100,7 @@ public class ForgotPassword extends Fragment {
                              Bundle savedInstanceState) {
         objectForgotFragment=inflater.inflate(R.layout.fragment_forgot_password,container,false);
         initializeVariables();
-//        assert getFragmentManager() != null;
-//        FragmentTransaction fr=getFragmentManager().beginTransaction();
-//        fr.replace(R.id.fragment_container,new PasswordReset());
-//        fr.commit();
+
         return objectForgotFragment;
     }
 }

@@ -16,16 +16,16 @@ public class UserDB {
     public UserDB(){
 
     }
-    public UserDB(String userID, String name, String city,String birthYear, String email,String phone, String userType){
-        this.userID = userID;
-        this.name = name;
-        this.city = city;
-        this.birthYear = birthYear;
-        this.email = email;
-        this.phone = phone;
-        this.userType = userType;
-
-    }
+//    public UserDB(String userID, String name, String city,String birthYear, String email,String phone, String userType){
+//        this.userID = userID;
+//        this.name = name;
+//        this.city = city;
+//        this.birthYear = birthYear;
+//        this.email = email;
+//        this.phone = phone;
+//        this.userType = userType;
+//
+//    }
 
     public String getUserID(){ return this.userID;    }
     public String getName(){

@@ -21,7 +21,7 @@ public class HomePageA extends AppCompatActivity {
 
     FirebaseAuth objectFirebaseAuth;
     TextView userName,Uid,uType;
-    Button signOut;
+    Button signOut,delU;
     DatabaseReference ref;
 
 
@@ -34,6 +34,7 @@ public class HomePageA extends AppCompatActivity {
         uType=findViewById(R.id.user_TypeA);
         signOut=findViewById(R.id.signOutA);
         userName=findViewById(R.id.userNameA);
+        delU=findViewById(R.id.deleteUser);
         Uid=findViewById(R.id.UidA);
 
         if(objectFirebaseAuth!=null){
@@ -61,5 +62,13 @@ public class HomePageA extends AppCompatActivity {
             startActivity(new Intent(HomePageA.this,MainActivity.class));
             finish();
         });
+        delU.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePageA.this,DeleteUsers.class));
+                finish();
+            }
+        });
+
     }
 }

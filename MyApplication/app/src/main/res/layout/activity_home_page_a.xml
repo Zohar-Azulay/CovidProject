@@ -89,17 +89,29 @@
             tools:ignore="HardcodedText" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/signOutA"
-        android:layout_width="163dp"
-        android:layout_height="105dp"
-        android:layout_marginBottom="306dp"
-        android:background="@drawable/background"
-        android:padding="10dp"
-        android:text="Sign Out"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        tools:ignore="HardcodedText" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/signOutA"
+            android:layout_width="163dp"
+            android:layout_height="105dp"
+            android:layout_marginBottom="306dp"
+            android:background="@drawable/background"
+            android:padding="10dp"
+            android:text="Sign Out"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/deleteUser"
+            android:layout_width="156dp"
+            android:layout_height="67dp"
+            android:text="delete" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -153,4 +153,5 @@ public class LoginV2 extends Fragment {
 
         return objectSignInFragment;
     }
+
 }

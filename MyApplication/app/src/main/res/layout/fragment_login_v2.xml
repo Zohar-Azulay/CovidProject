@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/fragment_horizontal_margin"
     android:paddingBottom="@dimen/fragment_vertical_margin"
     android:background="@drawable/background"
-    tools:context=".ui.ui.login.LoginFragment">
+    tools:context=".ui.LoginV2">
 
     <EditText
         android:id="@+id/email"
