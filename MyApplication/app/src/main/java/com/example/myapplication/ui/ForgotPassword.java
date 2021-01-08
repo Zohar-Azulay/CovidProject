@@ -1,97 +1,106 @@
 package com.example.myapplication.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-<<<<<<< HEAD
-=======
 import androidx.fragment.app.FragmentTransaction;
->>>>>>> Zohar
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.myapplication.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ForgotPassword#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class ForgotPassword extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private View objectForgotFragment;
+    private Button resetPassword;
+    private EditText resetEMailInput;
+    private FirebaseAuth mAuth;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ForgotPassword() {
-        // Required empty public constructor
+    public ForgotPassword(){
+        //empty constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ForgotPassword.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ForgotPassword newInstance(String param1, String param2) {
-        ForgotPassword fragment = new ForgotPassword();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private void initializeVariables(){
+        try{
+            mAuth=FirebaseAuth.getInstance();
+            resetEMailInput=objectForgotFragment.findViewById(R.id.resetEmail);
+            resetPassword=objectForgotFragment.findViewById(R.id.resetPassBtn);
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            resetPassword.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    resetPassword.setClickable(false);
+                    resPass();
+                }
+            });
+        }
+        catch (Exception e){
+            Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+        }
+    }
+    private void resPass()
+    {
+        try {
+
+            if (!resetEMailInput.getText().toString().isEmpty()) {
+                if (mAuth != null) {
+                    mAuth.sendPasswordResetEmail(resetEMailInput.getText().toString())
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        //flag=true;
+                                        resetPassword.setEnabled(false);
+                                        Toast.makeText(getContext(), "Please check your email for reset", Toast.LENGTH_LONG).show();
+                                        assert getFragmentManager() != null;
+
+                                        FragmentTransaction fr = getFragmentManager().beginTransaction();
+                                        fr.replace(R.id.fragment_container, new LoginV2()).addToBackStack("password-reset");
+                                        fr.commit();
+                                    }
+                                    else{
+                                        resetPassword.setEnabled(true);
+                                        Toast.makeText(getContext(), "Entered email does not exist", Toast.LENGTH_LONG).show();
+                                        resPass();
+                                    }
+                                }
+                    });
+                }
+
+            }
+            else {
+                Toast.makeText(getContext(), "Please enter your email first", Toast.LENGTH_SHORT).show();
+
+            }
+
+
+        }
+        catch (Exception e){
+            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_forgot_password, container, false);
-=======
-import android.widget.Button;
-
-import com.example.myapplication.R;
-import com.example.myapplication.ui.ui.login.LoginFragment;
-
-public class ForgotPassword extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view;
-        view = inflater.inflate(R.layout.fragment_forgot_password,container,false);
-        Button btnFragment=(Button)view.findViewById(R.id.button);
+        objectForgotFragment=inflater.inflate(R.layout.fragment_forgot_password,container,false);
+        initializeVariables();
 
-        btnFragment.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View V){
-                assert getFragmentManager() != null;
-                FragmentTransaction fr=getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container,new PasswordReset());
-                fr.commit();
-            }
-        });
-        return view;
->>>>>>> Zohar
+        return objectForgotFragment;
     }
 }

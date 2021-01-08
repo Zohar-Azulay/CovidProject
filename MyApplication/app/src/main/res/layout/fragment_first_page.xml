@@ -15,7 +15,7 @@
         android:layout_height="139dp"
         android:text="ברוך הבא לCov-Aid תודה שהצטרפת אלינו!"
         android:textAlignment="center"
-        android:textColor="#FFFFF0"
+        android:textColor="#FFFFFF"
         android:textSize="36sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
@@ -31,20 +31,17 @@
         tools:ignore="ContentDescription" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/pick_signup"
         android:layout_width="257dp"
         android:layout_height="146dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:background="#4EAEDC"
-        android:backgroundTint="#00BCD4"
         android:text="הרשמה"
-        android:textColor="#FFFFFF"
         android:textSize="36sp"
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/pick_login"
         android:layout_width="257dp"
         android:layout_height="146dp"
         android:layout_gravity="center_horizontal"

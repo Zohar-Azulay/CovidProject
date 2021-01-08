@@ -11,4 +11,86 @@
     <string name="login_failed">"Login failed"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="registration">הרשמה</string>
+    <string name="fullname">שם מלא</string>
+    <string name="fullname_hint">שם פרטי ושם משפחה</string>
+    <string name="yearofbirth">שנת לידה</string>
+    <string name="city">עיר מגורים</string>
+    //
+    <string name="email">מייל</string>
+    <string name="email_hint">כתובת דואר אלקטרוני</string>
+    <string name="cellphone">מס. טלפון</string>
+    <string name="password">סיסמה</string>
+    <string name="password_hint">הזן/י סיסמה בת לפחות 8 תווים</string>
+
+    <string name="confirm_reg">הרשמה</string>
+    <string name="pledger_history">הבקשות שלך</string>
+    <string name="pledger_ask">בקש עזרה</string>
+    <string name="pledger_your_pledges">הבקשות שלך</string>
+    <string name="pledger_edit_details">עריכת פרטים אישיים</string>
+    <string name="support_button">btn_support</string>
+    <string name="pledger_requests_list">Pledger requests list</string>
+    <string name="pledger_open_request_title">בקשה פתוחה</string>
+    <string name="pledger_call_volunteer">התקשר למתנדב</string>
+    <string name="pledger_close_request">סגור בקשה</string>
+    <string name="quit_app">יציאה</string>
+    <string name="increase">(+) הגדל (+)</string>
+    <string name="decrease">(-) הקטן (-)</string>
+    <string name="my_profile">הפרופיל שלי</string>
+    <string name="support_message">שלח הודעה מפורטת למנהל האזור ונציג יחזור אליך בהקדם
+    </string>
+    <string name="support_icon">עזרה</string>
+    <string name="send_support">שלח</string>
+    <string name="support_hint">רשום פה מה שאתה רוצה שנדע…</string>
+    <string name="cellphone_hint"> </string>
+    <string name="edit_details_title">עריכת פרטים אישיים</string>
+    <string name="save_changes">שמור שינויים</string>
+    <string name="new_pledge_title">בקשה חדשה</string>
+    <string name="new_pledge_continue">המשך</string>
+    <string name="new_pledge_details_title">פרטי בקשה חדשה</string>
+    <string name="new_pledge_confirm">פרסם בקשה</string>
+    <string name="title_activity_pledger">PledgerActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="change_email">Change Email</string>
+    <string name="change_password">Change Password</string>
+    <string name="send_password_reset_email">Send Password reset email</string>
+    <string name="remove_user">Remove user</string>
+    <string name="new_pass">New Password</string>
+    <string name="title_activity_profile">Firebase</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="taknon">קראתי ואני מאשר/ת את התקנון</string>
+    <string name="btn_link_to_register">Not a member? Get registered in Firebase now!</string>
+    <string name="btn_link_to_login">Already registered. Login Me!</string>
+    <string name="title_activity_reset_password">ResetPasswordActivity</string>
+    <string name="btn_forgot_password">Forgot your password?</string>
+    <string name="btn_reset_password">Reset Password</string>
+    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="hint_new_email">New Email</string>
+    <string name="btn_change">Change</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_remove">Remove</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="lbl_forgot_password">Forgot password?</string>
+    <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+    <string name="title_activity_home_page_p">HomePageP</string>
+    <string name="title_activity_home_page">HomePageA</string>
+
 </resources>
