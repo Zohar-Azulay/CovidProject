@@ -29,15 +29,14 @@ import java.util.ArrayList;
 public class edit_details extends Fragment {
 
 
-    private View ObjectRegPFragment;
     private EditText change_phone;
-
     private Spinner city_spin;
     private DatabaseReference reffSpinnerCity = FirebaseDatabase.getInstance().getReference();
     private DatabaseReference reffPhone = FirebaseDatabase.getInstance().getReference();
     private ArrayList<String> cityArrayList = new ArrayList<>();
     private String uid;
 
+    private FirebaseDatabase reff;
     FirebaseAuth mAuth;
 
     @Override
@@ -91,7 +90,7 @@ public class edit_details extends Fragment {
                     cityArrayList.add(item.child("עיר").getValue(String.class));
 
                 ArrayAdapter<String> arrayAdapterCity = new ArrayAdapter<String>(getActivity(),
-                        android.R.layout.simple_spinner_dropdown_item, cityArrayList);
+                        R.layout.fragment_spinner_layout_item, cityArrayList);
                 city_spin.setAdapter(arrayAdapterCity);
             }
 

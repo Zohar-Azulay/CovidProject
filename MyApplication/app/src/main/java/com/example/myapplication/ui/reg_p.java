@@ -116,7 +116,7 @@ public class reg_p extends Fragment {
                 Toast.makeText(getContext(), "יש למלא את כל הפרטים", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
-            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "יש למלא את כל הפרטים", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -128,12 +128,9 @@ public class reg_p extends Fragment {
                 yearArrayList.clear();
                 for (DataSnapshot item : snapshot.getChildren())
                     yearArrayList.add(item.child("שנה").getValue(String.class));
-                // TODO -- Dates validation
-                // אם קורס - לוודא שיש גרשיים בתאריכים
-
 
                 final ArrayAdapter<String> arrayAdapterYear = new ArrayAdapter<String>(getActivity(),
-                        android.R.layout.simple_spinner_dropdown_item, yearArrayList);
+                        R.layout.fragment_spinner_layout_item, yearArrayList);
                 year.setAdapter(arrayAdapterYear);
             }
 
@@ -154,7 +151,7 @@ public class reg_p extends Fragment {
                     cityArrayList.add(item.child("עיר").getValue(String.class));
 
                 final ArrayAdapter<String> arrayAdapterCity = new ArrayAdapter<String>(getActivity(),
-                        android.R.layout.simple_spinner_dropdown_item, cityArrayList);
+                        R.layout.fragment_spinner_layout_item, cityArrayList);
                 city.setAdapter(arrayAdapterCity);
             }
 
@@ -168,7 +165,6 @@ public class reg_p extends Fragment {
 
         String nameStr = name.getText().toString().trim();
         String phoneStr = phone.getText().toString().trim();
-        String passStr = password.getText().toString().trim();
         String emailStr = email.getText().toString().trim();
         String cityStr = city.getSelectedItem().toString();
         String yearStr = year.getSelectedItem().toString();

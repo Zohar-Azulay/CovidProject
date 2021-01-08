@@ -1,7 +1,5 @@
 package com.example.myapplication.ui;
 
-import android.util.Log;
-
 public class UserDB {
 
     private String userID;

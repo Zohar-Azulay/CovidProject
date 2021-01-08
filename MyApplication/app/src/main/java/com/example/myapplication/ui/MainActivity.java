@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication.R;
+import com.google.common.annotations.GwtCompatible;
 import com.google.firebase.FirebaseApp;
 
 import android.app.FragmentManager;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -24,11 +26,16 @@ public class MainActivity extends AppCompatActivity{
 
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
 
-        fragmentTransaction.add(R.id.fragment_container, new reg_p());
+        fragmentTransaction.add(R.id.fragment_container, new LoginV2());
         fragmentTransaction.commit();
 
         }
 
+
+    @Override
+    public void onBackPressed(){
+        Toast.makeText(getBaseContext(), "אין יציאה", Toast.LENGTH_LONG).show();
+    }
 
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
