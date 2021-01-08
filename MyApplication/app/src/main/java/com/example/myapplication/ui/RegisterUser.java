@@ -141,8 +141,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             userObj.setCity(cityStr);
             userObj.setBirthYear(yearStr);
 
-            String id = String.valueOf(userObj.getUserID());
-            reff.child(id).setValue(userObj);
+            reff.child(userObj.getUserID()).setValue(userObj);
 
             Intent intent = new Intent(this, EditPersonalDetails.class);
             startActivity(intent);
@@ -184,41 +183,41 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    private boolean wrongInput(String nameStr, String phoneStr, String passStr, String emailStr, String cityStr, String yearStr){
+    private boolean wrongInput(String nameStr, String phoneStr, String passStr, String emailStr, String cityStr, String yearStr) {
         boolean flag = false;
 
-        if(cityStr.equals("--בחר עיר--")){
+        if (cityStr.equals("--בחר עיר--")) {
             name.requestFocus();
             flag = true;
         }
-        if(yearStr.equals("--בחר שנת לידה--")){
+        if (yearStr.equals("--בחר שנת לידה--")) {
             name.setError("שדה חובה");
             name.requestFocus();
             flag = true;
         }
-        if(nameStr.isEmpty()){
+        if (nameStr.isEmpty()) {
             name.setError("שדה חובה");
             name.requestFocus();
             flag = true;
         }
-        if(phoneStr.isEmpty()){
+        if (phoneStr.isEmpty()) {
             phone.setError("שדה חובה");
             phone.requestFocus();
             flag = true;
         }
-        if(passStr.isEmpty()){
+        if (passStr.isEmpty()) {
             password.setError("שדה חובה");
             password.requestFocus();
             flag = true;
         }
 
-        if(passStr.length() < 6) {
+        if (passStr.length() < 6) {
             password.setError("סיסמא חייבת להכיל לפחות 6 תווים");
             password.requestFocus();
             flag = true;
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(emailStr).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(emailStr).matches()) {
             email.setError("מייל לא תקין");
             email.requestFocus();
             flag = true;
@@ -227,60 +226,4 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         return flag;
 
     }
-
-
-
-/*
-
-    @Override
-    public void onClick(View v) {
-        mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        if(register()) {
-                            Intent intent = new Intent(this,EditPersonalDetails.class);
-                            startActivity(intent);
-                        }
-                    }
-                }).addOnFailureListener(Throwable::printStackTrace);
-    }
-
-
-
-    private boolean register(){
-        String nameStr = name.getText().toString().trim();
-        String phoneStr = phone.getText().toString().trim();
-        String passStr = password.getText().toString().trim();
-        String emailStr = email.getText().toString().trim();
-
-
-        mAuth.createUserWithEmailAndPassword(emailStr, passStr)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-
-                        if(task.isSuccessful()){
-                            UserDB user = new UserDB(nameStr,emailStr,phoneStr,passStr);
-
-                            FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-
-                                    if(task.isSuccessful())
-                                        Toast.makeText(RegisterUser.this,"user has been register successfuly!",Toast.LENGTH_LONG).show();
-                                    else
-                                        Toast.makeText(RegisterUser.this,"Failed to register! Try again!11",Toast.LENGTH_LONG).show();
-
-                                }
-                            });
-                        }else
-                            Toast.makeText(RegisterUser.this,"Failed to register! Try again!22",Toast.LENGTH_LONG).show();
-                    }
-                });
-        return false;
-
-    }
-
- */
 }

@@ -3,14 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDAFC4"
+    android:background="@drawable/background"
+    android:layoutDirection="ltr"
     tools:context=".ui.WelfareFactors">
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#ECB8CA"
-            android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:orientation="vertical">
 
 
         <TextView
@@ -23,25 +24,45 @@
             android:textColor="#090909"
             android:textSize="30sp" />
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="496dp"
-            android:layout_marginTop="15dp">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        </ScrollView>
+            <ListView
+                android:id="@+id/phoneList"
+                android:layout_width="match_parent"
+                android:layout_height="513dp"
+                android:layout_weight="1"
+                android:divider="#000"
+                android:dividerHeight="1dp"
+                android:textDirection="ltr" />
 
-        <Button
-            android:id="@+id/reportBtn"
-            android:layout_width="237dp"
-            android:layout_height="63dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="25dp"
-            android:gravity="center"
-            android:text="חזרה לדף הבית"
-            android:textSize="24sp" />
+            <ListView
+                android:id="@+id/welfareList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="100dp"
+                android:layout_weight="1"
+                android:divider="#000"
+                android:dividerHeight="1dp"
+                android:textDirection="rtl" />
+        </LinearLayout>
+
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/welfareBtn"
+        android:layout_width="237dp"
+        android:layout_height="54dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="#070B9EAA "
+        android:gravity="center"
+        android:text="חזרה לדף הבית"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
 </FrameLayout>
-
-
-

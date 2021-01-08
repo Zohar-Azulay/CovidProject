@@ -17,8 +17,9 @@ import com.example.myapplication.R;
 import com.google.firebase.FirebaseApp;
 
 public class   ReportToDevelopers extends AppCompatActivity {
-    EditText et_to, etSubject, etMessage;
+    EditText etSubject, etMessage;
     Button bt_send;
+    String et_to = "zoharazulay31@gmail.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,20 +28,21 @@ public class   ReportToDevelopers extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
 
 
-        et_to = findViewById(R.id.et_to);
-        etSubject = findViewById(R.id.et_toSubject);
-        etMessage = findViewById(R.id.et_message);
-        bt_send = findViewById(R.id.bt_send);
+        etSubject = (EditText) findViewById(R.id.et_toSubject);
+        etMessage = (EditText) findViewById(R.id.et_message);
+        bt_send = (Button) findViewById(R.id.bt_send);
 
 
         bt_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:"+ et_to.getText().toString()));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:"+ et_to));
+                //Intent intent = new Intent(Intent.ACTION_SEND);
+                //intent.putExtra(intent.EXTRA_EMAIL,  new String []{"zoharazulay31@gmail.com"});
                 intent.putExtra(Intent.EXTRA_SUBJECT,etSubject.getText().toString());
                 intent.putExtra(Intent.EXTRA_TEXT,etMessage.getText().toString());
+                //intent.setSelector(new Intent(Intent.ACTION_SENDTO));
                 startActivity(intent);
-
             }
         });
     }

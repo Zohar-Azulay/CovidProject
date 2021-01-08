@@ -4,8 +4,7 @@ import android.util.Log;
 
 public class UserDB {
 
-    static int count = 1;
-    private int userID = 0;
+    private String userID = "";
     private String name;
     private String city;
     private String birthYear;
@@ -15,8 +14,6 @@ public class UserDB {
     private String password;
 
     public UserDB(){
-
-        userID = count++;
     }
 /*
     public UserDB(String userID, String name, String city, int birthYear, String email,String phone, String userType,String password){
@@ -37,7 +34,7 @@ public class UserDB {
         this.password = password;
     }*/
 
-    public int getUserID(){
+    public String getUserID(){
         return this.userID;
     }
 
@@ -64,7 +61,9 @@ public class UserDB {
         return password;
     }
 
-
+    public void setUserID(String userID){
+        this.userID = userID;
+    }
     public void setName(String name){
        this.name = name;
     }
@@ -87,19 +86,16 @@ public class UserDB {
         this.password = password;
     }
 
-    @Override
+    public String printInfo(){
+        return name + "\n" + email + "\n" + phone + "\n" + userID;
+    }
+
+   /* @Override
     public String toString() {
        return name + ", " + city;
+    }*/
 
-       /* return "UserDB{" +
-                "userID='" + userID + '\'' +
-                ", name='" + name + '\'' +
-                ", name='" + name + '\'' +
-                ", city='" + city + '\'' +
-                ", birthYear=" + birthYear +
-                ", email='" + email + '\'' +
-                ", phone=" + phone +
-                ", userType='" + userType + '\'' +
-                '}';*/
+    public String toString() {
+        return '\n' + name + '\n' + email + '\n' + phone + '\n' + userID + '\n';
     }
 }

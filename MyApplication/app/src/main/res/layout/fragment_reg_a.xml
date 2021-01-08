@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A16CC1"
-    android:backgroundTint="#F6ACF3"
-    android:foregroundTint="#FFFFFF"
+    android:background="@drawable/background"
+    android:foregroundTint="#070B9EAA "
     android:orientation="vertical"
     tools:context=".ui.reg_a">
 
@@ -101,8 +100,8 @@
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:layout_weight="1"
-            android:layoutDirection="rtl"
-            android:autofillHints="--בחר שנת לידה--"/>
+            android:autofillHints="--בחר שנת לידה--"
+            android:layoutDirection="rtl" />
 
         <TextView
             android:id="@+id/textView71"
@@ -126,7 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_weight="1"
-            android:layoutDirection="rtl"/>
+            android:layoutDirection="rtl" />
 
         <TextView
             android:id="@+id/textView81"
@@ -183,9 +182,10 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="70dp"
         android:layout_marginBottom="25dp"
-        android:background="#FFFFFF"
+        android:backgroundTint="#070B9EAA "
         android:gravity="center_horizontal"
         android:text="להרשמה"
+        android:textColor="#000000"
         android:textSize="30sp"
         app:strokeColor="#FFFFFF" />
 

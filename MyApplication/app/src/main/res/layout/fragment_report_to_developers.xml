@@ -4,39 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CD688B"
+    android:background="@drawable/background"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".ui.ReportToDevelopers">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#E4B3C4"
-        android:padding="10dp"
-        android:layoutDirection="rtl">
-
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="אל:"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/et_to"
-            android:layout_width="372dp"
-            android:layout_height="wrap_content" />
-            android:background="#E4B3C4"/>
-    </LinearLayout>
 
     <EditText
         android:id="@+id/et_toSubject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="#E4B3C4"
+        android:background="#FEFFFF"
         android:hint="נושא:"
         android:padding="10dp"
         android:textSize="24sp" />
@@ -48,22 +27,21 @@
         android:layout_height="718dp"
         android:layout_marginTop="10dp"
         android:layout_weight="1"
-        android:background="#E4B3C4"
+        android:background="#FFFFFF"
         android:gravity="top"
-        android:hint="הטקסט של האימייל"
+        android:hint="תוכן הפנייה:"
         android:padding="10dp"
         android:textSize="24sp" />
-
 
     <Button
         android:id="@+id/bt_send"
         android:layout_width="212dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="#E4B3C4"
+        android:backgroundTint="#070B9EAA "
         android:padding="10dp"
         android:text="שלח"
-        android:textColor="#E4B3C4"
+        android:textColor="#000000"
         android:textSize="25sp" />
 
 </LinearLayout>

@@ -18,7 +18,7 @@ import java.lang.ref.WeakReference;
 
 public class HomeAdmin extends AppCompatActivity implements View.OnClickListener {
 
-    private int id = 1;
+    private String id = "LYCkp9YAw4StPahWyZncXg3b6R63";
     private Button openReq, rtd, msg, edit, reports,deleteUser, logOut, welfare;
 
 
@@ -28,7 +28,8 @@ public class HomeAdmin extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.fragment_home_admin);
 
         if(getIntent().hasExtra("id"))
-            id = getIntent().getIntExtra("id",0);
+            id = getIntent().getStringExtra(id);
+           // id = getIntent().getIntExtra("id",0);
 
         openReq = (Button) findViewById(R.id.openReq);
         rtd = (Button) findViewById(R.id.rtd);
@@ -70,13 +71,13 @@ public class HomeAdmin extends AppCompatActivity implements View.OnClickListener
         welfare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity(WeakReference.class);
+                openActivity(WelfareFactors.class);
             }
         });
     }
 
     public void openActivity(Class activityClass){
-        Intent intent = new Intent(this, activityClass);
+        Intent intent = new Intent(HomeAdmin.this, activityClass);
         intent.putExtra("id",id);
         startActivity(intent);
     }

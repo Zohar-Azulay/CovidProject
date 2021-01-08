@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A16CC1"
-    android:backgroundTint="#F6ACF3"
+    android:background="@drawable/background"
     android:foregroundTint="#FFFFFF"
     android:orientation="vertical"
     tools:context=".ui.reg_a">
@@ -24,53 +23,6 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_weight="0"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/emailEdit1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <TextView
-            android:id="@+id/emailEdit"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:text="כתובת מייל:"
-            android:textColor="#000000"
-            android:textSize="30sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/passwordEdit1"
-            android:layout_width="wrap_content"
-            android:layout_height="58dp"
-            android:ems="10"
-            android:inputType="textPassword" />
-
-        <TextView
-            android:id="@+id/passwordEdit"
-            android:layout_width="148dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="סיסמה:"
-            android:textColor="#000000"
-            android:textSize="30sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="53dp"
         android:orientation="horizontal">
 
@@ -79,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_weight="1"
-            android:layoutDirection="rtl"/>
+            android:layoutDirection="rtl" />
 
         <TextView
             android:id="@+id/cityEdit"
@@ -115,20 +67,35 @@
             android:text="מספר טלפון:"
             android:textColor="#050505"
             android:textSize="30sp" />
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="411dp"
+        android:layout_height="53dp"
+        android:layout_gravity="center"
+        android:layout_margin="100dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="לשינוי סיסמה הקש כאן"
+        android:textColor="#0B0A0A"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/editBtn"
         android:layout_width="170dp"
-        android:layout_height="76dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="70dp"
         android:layout_marginBottom="25dp"
-        android:background="#FFFFFF"
+        android:backgroundTint="#070B9EAA "
         android:gravity="center_horizontal"
         android:text="שמור"
+        android:textColor="#000000"
         android:textSize="30sp"
         app:strokeColor="#FFFFFF" />
+
 
 </LinearLayout>
 
