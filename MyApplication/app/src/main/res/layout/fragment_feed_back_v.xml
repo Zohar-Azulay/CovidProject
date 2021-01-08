@@ -9,6 +9,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="           הערכת מבקש עזרה"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="246dp"
         android:orientation="horizontal">
 
@@ -18,6 +32,8 @@
             android:layout_height="44dp"
             android:layout_marginTop="180dp"
             android:layout_weight="1"
+            android:background="#0C552727"
+            android:backgroundTint="#0D40A6"
             android:text="הכנס משוב בבקשה :"
             android:textSize="24sp" />
 
@@ -25,7 +41,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="147dp"
         android:orientation="horizontal">
 
         <EditText
@@ -35,5 +51,20 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="266dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_height="match_parent"
+            android:layout_margin="100dp"
+            android:layout_weight="1"
+            android:backgroundTint="#070B9EAA"
+            android:text="Button"
+            android:textColor="#050505" />
     </LinearLayout>
 </LinearLayout>

@@ -9,8 +9,8 @@
     tools:context=".ui.homePageV" >
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="249dp"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -34,7 +34,9 @@
             android:layout_margin="20dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
+            android:backgroundTint="#1D6FC8EC"
             android:text="בקשות פתוחות"
+            android:textColor="#050505"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -51,7 +53,9 @@
             android:layout_margin="20dp"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
+            android:backgroundTint="#1D6FC8EC"
             android:text="עריכת פרטים אישיים"
+            android:textColor="#070707"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -68,7 +72,9 @@
             android:layout_margin="20dp"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
+            android:backgroundTint="#1D6FC8EC"
             android:text="התנתק"
+            android:textColor="#020202"
             android:textSize="18sp" />
 
         <Button
@@ -78,6 +84,8 @@
             android:layout_margin="20dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:text="יציאה לחופשה" />
+            android:backgroundTint="#1D6FC8EC"
+            android:text="יציאה לחופשה"
+            android:textColor="#020202" />
     </LinearLayout>
 </LinearLayout>

@@ -29,7 +29,7 @@ public class homePageV extends Fragment {
 
                 assert getFragmentManager() != null;
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new openRegV());
+                fr.replace(R.id.fragment_container, new openRegV()).addToBackStack("open_req");
                 fr.commit();
             }
 
@@ -40,7 +40,7 @@ public class homePageV extends Fragment {
 
                 assert getFragmentManager() != null;
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new VacationV());
+                fr.replace(R.id.fragment_container, new VacationV()).addToBackStack("open_vacation");
                 fr.commit();
             }
 
@@ -52,7 +52,7 @@ public class homePageV extends Fragment {
 
                 assert getFragmentManager() != null;
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new editDetV());
+                fr.replace(R.id.fragment_container, new editDetV()).addToBackStack("to edit");
                 fr.commit();
             }
 

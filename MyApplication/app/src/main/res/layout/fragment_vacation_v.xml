@@ -19,8 +19,8 @@
             android:layout_height="75dp"
             android:layout_marginTop="200dp"
             android:layout_marginEnd="20dp"
-            android:background="#053FB3"
-            android:text="     האם אתה בטוח ?"
+            android:backgroundTint="#070B9EAA"
+            android:text="   האם אתה בטוח ?"
             android:textAllCaps="false"
             android:textColor="#050505"
             android:textColorHighlight="#0B0606"
@@ -41,8 +41,11 @@
             android:layout_width="159dp"
             android:layout_height="66dp"
             android:layout_weight="1"
+            android:backgroundTint="#070B9EAA"
             android:text="לא  ,  חזור"
-            android:textSize="18sp" />
+            android:textColor="#070707"
+            android:textSize="18sp"
+            app:iconTint="#070707" />
 
         <Button
             android:id="@+id/button8"
@@ -50,7 +53,9 @@
             android:layout_height="66dp"
             android:layout_marginHorizontal="25dp"
             android:layout_weight="1"
+            android:backgroundTint="#070B9EAA"
             android:text="צא לחופשה"
+            android:textColor="#040303"
             android:textSize="18sp" />
     </LinearLayout>
 

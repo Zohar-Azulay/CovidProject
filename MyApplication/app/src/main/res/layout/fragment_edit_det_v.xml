@@ -10,8 +10,8 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
-        android:layout_height="79dp"
-        android:layout_margin="35sp"
+        android:layout_height="80dp"
+        android:layout_margin="25dp"
         android:text="עריכת פרטים אישיים"
         android:textSize="38sp" />
 
@@ -66,24 +66,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="78dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/editTextTextPersonName5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName" />
+        android:layout_height="93dp"
+        android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginRight="35dp"
+            android:layout_height="47dp"
+            android:layout_margin="30dp"
             android:layout_weight="1"
-            android:text="  מס' טלפון  :"
+            android:clickable="true"
+            android:hapticFeedbackEnabled="false"
+            android:linksClickable="false"
+            android:text="          לשינוי סיסמה לחץ כאן"
             android:textSize="24sp" />
     </LinearLayout>
 
@@ -100,7 +95,9 @@
             android:layout_marginTop="150dp"
             android:layout_marginEnd="12dp"
             android:layout_weight="1"
+            android:backgroundTint="#1D6FC8EC"
             android:text="אישור"
+            android:textColor="#070707"
             android:textSize="32dp" />
     </LinearLayout>
 
