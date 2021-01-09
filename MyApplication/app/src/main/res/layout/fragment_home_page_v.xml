@@ -48,14 +48,26 @@
 
         <Button
             android:id="@+id/button31"
-            android:layout_width="wrap_content"
-            android:layout_height="84dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:backgroundTint="#1D6FC8EC"
             android:text="עריכת פרטים אישיים"
             android:textColor="#070707"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:backgroundTint="#1D6FC8EC"
+            android:text="שליחת משוב"
+            android:textColor="#040303"
             android:textSize="18sp" />
 
     </LinearLayout>

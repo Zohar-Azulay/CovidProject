@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".ui.FeedBackV">
+
+    <EditText
+        android:id="@+id/et_toSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#FEFFFF"
+        android:hint="נושא:"
+        android:padding="10dp"
+        android:textSize="24sp" />
+
+
+    <EditText
+        android:id="@+id/et_message"
+        android:layout_width="match_parent"
+        android:layout_height="718dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:gravity="top"
+        android:hint="תוכן הפנייה:"
+        android:padding="10dp"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/bt_send"
+        android:layout_width="212dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#070B9EAA "
+        android:padding="10dp"
+        android:text="שלח"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+</LinearLayout>
+

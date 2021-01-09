@@ -1,66 +1,71 @@
 package com.example.myapplication.ui;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.myapplication.R;
+import com.google.firebase.FirebaseApp;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FeedBackV#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class FeedBackV extends Fragment {
+public class FeedBackV extends AppCompatActivity {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public FeedBackV() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FeedBackV.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FeedBackV newInstance(String param1, String param2) {
-        FeedBackV fragment = new FeedBackV();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    EditText etSubject, etMessage;
+    Button bt_send;
+    String et_to = "zoharazulay31@gmail.com";
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+        setContentView(R.layout.activity_feed_back);
+        FirebaseApp.initializeApp(this);
+
+
+        etSubject = (EditText) findViewById(R.id.et_toSubject);
+        etMessage = (EditText) findViewById(R.id.et_message);
+        bt_send = (Button) findViewById(R.id.bt_send);
+
+
+        bt_send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendEmail();
+            }
+        });
+    }
+    protected void sendEmail() {
+        Log.i("Send email", "");
+
+        String[] TO = {"zoharazulay31@gmail.com"};
+        String[] CC = {"zoharazulay31@gmail.com"};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+
+
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, etSubject.getText().toString());
+        emailIntent.putExtra(Intent.EXTRA_TEXT, etMessage.getText().toString());
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            finish();
+            Log.i("Finished sending email...", "");
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(FeedBackV.this,
+                    "There is no email client installed.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_feed_back_v, container, false);
-    }
 }

@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 
 import androidx.fragment.app.FragmentTransaction;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FirebaseApp.initializeApp(this);
-
+        List<dataRequsts> listDataR;
 
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
 

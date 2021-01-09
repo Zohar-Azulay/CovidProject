@@ -1,19 +1,25 @@
 package com.example.myapplication.ui;
-
 import java.text.DateFormat;
 import java.util.Date;
-import java.util.HashMap;
 
-public class RequestsDB {
+public class dataRequsts {
 
     private Date date;
     private String time;
     private String pledgeID;
     private String pleggerUid;
-    private String helper_uid;
     private boolean status;
     private String type;
 
+
+    public dataRequsts(Date date, String time, String pledgeID, String pleggerUid, boolean status, String type) {
+        this.date = date;
+        this.time = time;
+        this.pledgeID = pledgeID;
+        this.pleggerUid = pleggerUid;
+        this.status = status;
+        this.type = type;
+    }
 
     public Date getDate() {
         return date;
@@ -63,16 +69,10 @@ public class RequestsDB {
         this.type = type;
     }
 
-    public String getHelper_uid() {
-        return helper_uid;
-    }
-
-    public void setHelper_uid(String helper_uid) {
-        this.helper_uid =helper_uid;
-    }
-
     @Override
     public String toString() {
         return  DateFormat.getDateInstance(DateFormat.SHORT).format(date) + " " + time + "\n" + pledgeID + '\n' + pleggerUid + '\n' + status + '\n' + type;
     }
 }
+
+
