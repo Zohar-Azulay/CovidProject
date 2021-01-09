@@ -43,7 +43,7 @@ public class PickReg extends Fragment {
         ad.setOnClickListener(V -> {
             assert getFragmentManager() != null;
             FragmentTransaction fr3=getFragmentManager().beginTransaction();
-            fr3.replace(R.id.fragment_container,new reg_a());
+            fr3.replace(R.id.fragment_container,new AdminPreReg());
             fr3.commit();
         });
         return view;

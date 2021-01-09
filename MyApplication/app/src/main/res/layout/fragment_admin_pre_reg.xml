@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".ui.AdminPreReg">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/pre_reg_head_line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="נא להכניס מפתח מנהל"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/textKey"
+        android:layout_width="284dp"
+        android:layout_height="84dp"
+        android:ems="10"
+        android:hint="מפתח מנהל לדוגמה: Az57ktRE"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/pre_reg_head_line"
+        app:layout_constraintEnd_toEndOf="@+id/pre_reg_head_line"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pre_reg_head_line"
+        app:layout_constraintVertical_bias="0.364" />
+
+    <Button
+        android:id="@+id/confirm_admin"
+        android:layout_width="161dp"
+        android:layout_height="62dp"
+        android:text="אישור"
+        app:layout_constraintBottom_toBottomOf="@+id/pre_reg_head_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textKey" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

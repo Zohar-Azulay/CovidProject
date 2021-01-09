@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -32,7 +33,7 @@ import java.util.ArrayList;
 public class reg_p extends Fragment {
 
     private EditText name, password, email, phone;
-    private Button signUpBtn;
+    private Button signUpBtn,askForHelp;
     private CheckBox terms;
     private View ObjectRegPFragment;
     private FirebaseAuth mAuth;
@@ -56,6 +57,7 @@ public class reg_p extends Fragment {
     private void initializeUser(){
         try{
             mAuth = FirebaseAuth.getInstance();
+            askForHelp=ObjectRegPFragment.findViewById(R.id.pick_reg_help);
             name = ObjectRegPFragment.findViewById(R.id.reg_p_name);
             email = ObjectRegPFragment.findViewById(R.id.reg_p_email);
             password = ObjectRegPFragment.findViewById(R.id.reg_p_password);
@@ -73,7 +75,15 @@ public class reg_p extends Fragment {
             reff = FirebaseDatabase.getInstance().getReference().child("משתמשים");
 
             signUpBtn.setOnClickListener(v -> signUpUser());
-
+            askForHelp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    assert getFragmentManager() != null;
+                    FragmentTransaction fr=getFragmentManager().beginTransaction();
+                    fr.replace(R.id.fragment_container,new AskForHelp()).addToBackStack("pick-ask-for-help");
+                    fr.commit();
+                }
+            });
         }
         catch (Exception e){
             Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
@@ -182,35 +192,6 @@ public class reg_p extends Fragment {
         String id = String.valueOf(userObj.getUserID());
         reff.child(id).setValue(userObj);
     }
-
-    // שם טלפון שנת לידה
-//    private void userExist(String nameStr, String phoneStr, String yearStr) {
-//        reff = FirebaseDatabase.getInstance().getReference().child("משתמשים");
-//        reff.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                String dbName, dbPhone, dbYear;
-//                for (DataSnapshot item : snapshot.getChildren()) {
-//                    dbName = item.child("name").getValue(String.class);
-//                    if(nameStr.equals(dbName)){
-//                        dbPhone = item.child("phone").getValue(String.class);
-//                        if(phoneStr.equals(dbPhone)){
-//                            dbYear = item.child("birthYear").getValue(String.class);
-//                            if(yearStr.equals(dbYear)) {
-//                                Log.d("MSG","כתובת המייל כבר רשומה אצלנו");
-//                            }
-//                        }
-//                    }
-//                }
-//
-//          }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//        }
 
 
     @Nullable
