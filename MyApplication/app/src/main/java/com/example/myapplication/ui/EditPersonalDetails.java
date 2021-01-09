@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
@@ -57,6 +58,14 @@ public class EditPersonalDetails extends AppCompatActivity implements View.OnCli
                 String cityStr = city.getSelectedItem().toString();
                 String phoneStr = phone.getText().toString().trim();
                 editData(phoneStr, cityStr);
+            }
+        });
+        TextView pass = (TextView) findViewById(R.id.password);
+        pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EditPersonalDetails.this, Container.class);
+                startActivity(intent);
             }
         });
     }

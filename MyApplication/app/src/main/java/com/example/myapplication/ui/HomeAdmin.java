@@ -1,6 +1,7 @@
 package com.example.myapplication.ui;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -72,6 +73,16 @@ public class HomeAdmin extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View v) {
                 openActivity(WelfareFactors.class);
+            }
+        });
+
+        msg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://console.firebase.google.com/u/0/project/cov-aid-db7dc/notification/compose"); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+
             }
         });
     }

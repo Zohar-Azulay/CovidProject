@@ -2,6 +2,7 @@ package com.example.myapplication.ui;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 public class RequestsDB {
 
@@ -11,6 +12,7 @@ public class RequestsDB {
     private String pleggerUid;
     private boolean status;
     private String type;
+
 
     public Date getDate() {
         return date;

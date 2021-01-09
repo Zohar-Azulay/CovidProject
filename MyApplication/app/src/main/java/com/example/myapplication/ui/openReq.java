@@ -30,6 +30,7 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 public class openReq extends AppCompatActivity {
 
@@ -60,30 +61,31 @@ public class openReq extends AppCompatActivity {
         openRecList = (ListView) findViewById(R.id.openRecList);
         sortSpinner = (Spinner) findViewById(R.id.sort);
 
+        spinnerList.add("בחר");
         spinnerList.add("סטטוס");
         spinnerList.add("תאריך");
         spinnerList.add("סוג בקשה");
         spinnerAdapter = new ArrayAdapter<>(openReq.this, android.R.layout.simple_spinner_dropdown_item,spinnerList);
         sortSpinner.setAdapter(spinnerAdapter);
-
+//        sortByDate();
 
         reff =  FirebaseDatabase.getInstance().getReference("Requests");
         adapter =  new ArrayAdapter<RequestsDB>(this,android.R.layout.simple_list_item_1,arrayList);
 
-        reff.child("dateStr").setValue(new Date());
+//        reff.child("dateStr").setValue(new Date());
         sortListView("status");
         sortSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
-                    case 0:
-                        sortListView("date");
+                    case 1:
+                        sortListView("status");
                         break;
-                    case 1: sortListView("type");
+                    case 2: //sortListView("date");
                         break;
-                    case 2: sortListView("status");
+                    case 3: sortListView("type");
                         break;
-                    default:sortListView("date");
+                    default://sortListView("date");
                 }
             }
 
@@ -110,7 +112,7 @@ public class openReq extends AppCompatActivity {
 
     private void sortListView(String sortBy){
         arrayList.clear();
-        reff.orderByChild(sortBy).addValueEventListener(new ValueEventListener() {
+        reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int year, month, day;
@@ -118,8 +120,8 @@ public class openReq extends AppCompatActivity {
                 Date date;
                 for(DataSnapshot ds : snapshot.getChildren()){
                     req = new RequestsDB();
-                    dateStr = ds.child("dateStr").getValue(String.class);
-                    if (dateStr != null && dateStr.length() == 10) {
+                    dateStr = ds.child("date").getValue(String.class);
+                     if (dateStr != null && dateStr.length() == 10) {
                         year = Integer.parseInt(dateStr.substring(6,10));
                         month = Integer.parseInt(dateStr.substring(3,5));
                         day = Integer.parseInt(dateStr.substring(0,2));
@@ -130,7 +132,8 @@ public class openReq extends AppCompatActivity {
                     req.setDate(date);
                     req.setPledgeID(ds.child("pledgeID").getValue(String.class));
                     req.setPleggerUid(ds.child("pledger_uid").getValue(String.class));
-                    //req.setStatus(ds.child("status").getValue(boolean.class));
+                    if(ds.child("status") != null)
+                        req.setStatus(ds.child("status").getValue(boolean.class));
                     req.setType(ds.child("type").getValue(String.class));
                     req.setTime(ds.child("timeStr").getValue(String.class));
                     arrayList.add(req);
@@ -143,7 +146,7 @@ public class openReq extends AppCompatActivity {
             }
         });
     }
-
+/*
     public void sortByDate(){
         ArrayList<RequestsDB> tmp = new ArrayList<RequestsDB>();
         int tmpIndex = 1;
@@ -162,7 +165,5 @@ public class openReq extends AppCompatActivity {
         ArrayAdapter<RequestsDB> adapterTmp = new ArrayAdapter<RequestsDB>(this,android.R.layout.simple_list_item_1,tmp);
         openRecList.setAdapter(adapterTmp);
 
-
-
-    }
+    }*/
 }
