@@ -127,7 +127,7 @@ public class LoginV2 extends Fragment {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     objectProgressBar.setVisibility(View.INVISIBLE);
-                                    Toast.makeText(getContext(),"לא",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getContext(),"ההתחברות לא צלחה",Toast.LENGTH_SHORT).show();
 
                                     signInBtn.setEnabled(true);
                                     Toast.makeText(getContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
@@ -136,7 +136,7 @@ public class LoginV2 extends Fragment {
                 }
             }
             else{
-                Toast.makeText(getContext(),"Please Fill Both Fields",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"יש לבשלים את כל השדות",Toast.LENGTH_SHORT).show();
             }
         }
         catch (Exception e){

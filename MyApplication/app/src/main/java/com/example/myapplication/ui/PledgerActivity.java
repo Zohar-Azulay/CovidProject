@@ -21,7 +21,6 @@ public class PledgerActivity extends AppCompatActivity {
 
         fragmentTransaction.add(R.id.fragment_pledger_container,new main_p());
         fragmentTransaction.commit();
-
     }
 
     @Override

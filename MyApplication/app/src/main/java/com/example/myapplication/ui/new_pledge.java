@@ -117,7 +117,7 @@ public class new_pledge extends Fragment {
                     uid = mAuth.getCurrentUser().getUid();
                     updateDB();
 
-
+                    Toast.makeText(getContext(), "בקשתך נקלטה בהצלחה במערכת!", Toast.LENGTH_LONG).show();
                     assert getFragmentManager() != null;
                     FragmentTransaction fr_newp = getFragmentManager().beginTransaction();
                     fr_newp.replace(R.id.fragment_pledger_container, new main_p());
@@ -164,8 +164,7 @@ public class new_pledge extends Fragment {
 
         startTime = cYear +  cMonth + cDay + cHour +  cMinute + cSecond;
 
-        reffRequest.child(startTime).setValue(reqObj);
-//        reffRequest.child(openDateTime.toString()).setValue(reqObj);
+        reffRequest.child(openDateTime.toString()).setValue(reqObj);
     }
 
 //    private void updatePledgeID(){

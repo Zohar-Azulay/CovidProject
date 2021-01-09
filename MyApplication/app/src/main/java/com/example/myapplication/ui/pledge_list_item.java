@@ -5,7 +5,6 @@ import com.google.firebase.database.DatabaseReference;
 public class pledge_list_item {
     private String name, date, time;
 
-
     public pledge_list_item(String name, String date, String time) {
         this.name = name;
         this.date = date;

@@ -22,7 +22,7 @@ public class main_p extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main_p, container, false);
-        Toast.makeText(getContext(), "היי", Toast.LENGTH_LONG).show();
+//        Toast.makeText(getContext(), "ברוכים השבים", Toast.LENGTH_LONG).show();
 
         Button btnNewP = view.findViewById(R.id.btn_ask);
         Button btnYourP = view.findViewById(R.id.btn_your_pledges);

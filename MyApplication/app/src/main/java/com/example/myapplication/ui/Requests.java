@@ -21,14 +21,21 @@ public class Requests {
     private String type;
     private boolean status = false; // F for open, T for closed
 
+    final String currentDate = DateFormat.getDateInstance(DateFormat.SHORT).format(openDate.getTime());
+    final String currentTime = DateFormat.getTimeInstance(DateFormat.MEDIUM).format(openDate.getTime());
+
 //    private Date reqYear, reqMonth, reqDay, reqHour, reqMinute;
 
     public Requests() {
-
-        final String currentDate = DateFormat.getDateInstance(DateFormat.SHORT).format(openDate.getTime());
-        final String currentTime = DateFormat.getTimeInstance(DateFormat.MEDIUM).format(openDate.getTime());
         pledgeID = currentDate + ' ' + currentTime;
     }
+
+    public Requests(String type, String date, String time){
+        this.type = type;
+        this.date = date;
+        this.time = time;
+    }
+
 
     public String getHelper_uid() {
         return this.helper_uid;
