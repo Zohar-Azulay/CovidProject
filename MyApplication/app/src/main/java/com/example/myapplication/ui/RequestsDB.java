@@ -64,6 +64,6 @@ public class RequestsDB {
 
     @Override
     public String toString() {
-        return  DateFormat.getDateInstance(DateFormat.SHORT).format(date) + " " + time + "\n" + pledgeID + '\n' + pleggerUid + '\n' + status + '\n' + type;
+        return  date.getDate() + "/" + date.getMonth() + "/" + date.getYear() + " " + time + "\n" + pledgeID + '\n' + pleggerUid + '\n' + status + '\n' + type;
     }
 }

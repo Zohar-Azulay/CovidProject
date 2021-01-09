@@ -45,6 +45,7 @@ public class openReq extends AppCompatActivity {
     private DatabaseReference reff;
 
     private ArrayList<RequestsDB> arrayList = new ArrayList<RequestsDB>();
+    private ArrayList<RequestsDB> copy = new ArrayList<RequestsDB>();
     private ArrayAdapter<RequestsDB> adapter;
 
     private RequestsDB req = new RequestsDB();
@@ -81,11 +82,11 @@ public class openReq extends AppCompatActivity {
                     case 1:
                         sortListView("status");
                         break;
-                    case 2: //sortListView("date");
+                    case 2: sortListView("dateStr");
                         break;
                     case 3: sortListView("type");
                         break;
-                    default://sortListView("date");
+                    default:break;
                 }
             }
 
@@ -112,7 +113,8 @@ public class openReq extends AppCompatActivity {
 
     private void sortListView(String sortBy){
         arrayList.clear();
-        reff.addValueEventListener(new ValueEventListener() {
+
+        reff.orderByChild(sortBy).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int year, month, day;
@@ -135,10 +137,13 @@ public class openReq extends AppCompatActivity {
                     if(ds.child("status") != null)
                         req.setStatus(ds.child("status").getValue(boolean.class));
                     req.setType(ds.child("type").getValue(String.class));
-                    req.setTime(ds.child("timeStr").getValue(String.class));
+                    req.setTime(ds.child("time").getValue(String.class));
                     arrayList.add(req);
+                    copy.add(req);
                 }
                 openRecList.setAdapter(adapter);
+                if(sortBy.equals("date"))
+                    sortByDate();
             }
 
             @Override
@@ -146,24 +151,24 @@ public class openReq extends AppCompatActivity {
             }
         });
     }
-/*
+
     public void sortByDate(){
         ArrayList<RequestsDB> tmp = new ArrayList<RequestsDB>();
-        int tmpIndex = 1;
-        Date dateIndex;
-        for(int index = 0; index < arrayList.size(); index++) {
-            dateIndex = arrayList.get(index).getDate();
-            tmpIndex = 1;
-            while (tmpIndex < tmp.size() && dateIndex.after(tmp.get(tmpIndex).getDate())) {
-                tmpIndex++;
+        if(copy.size() == 1)
+            tmp.add(copy.get(0));
+        else {
+            int size = 0;
+            while (copy.size() != 0) {
+                while (size < tmp.size() && copy.get(0).getDate().after(tmp.get(size).getDate()))
+                    size++;
+                if (size == tmp.size())
+                    tmp.add(copy.get(0));
+                else tmp.add(size, copy.get(0));
+                copy.remove(0);
             }
-            if (tmpIndex == tmp.size())
-                tmp.add(arrayList.get(index));
-            else
-                tmp.add(tmpIndex, arrayList.get(index));
         }
         ArrayAdapter<RequestsDB> adapterTmp = new ArrayAdapter<RequestsDB>(this,android.R.layout.simple_list_item_1,tmp);
         openRecList.setAdapter(adapterTmp);
 
-    }*/
+    }
 }
