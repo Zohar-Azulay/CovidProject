@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:foregroundTint="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".ui.reg_a">
+
+    <TextView
+        android:id="@+id/editPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="עריכת פרטים אישיים"
+        android:textColor="#000000"
+        android:textSize="36sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/cityEditSpinner1"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:layoutDirection="rtl" />
+
+        <TextView
+            android:id="@+id/cityEdit"
+            android:layout_width="411dp"
+            android:layout_height="59dp"
+            android:layout_weight="1"
+            android:text="עיר מגורים:"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_weight="0"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/phoneEdit1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:cursorVisible="false"
+            android:defaultFocusHighlightEnabled="false"
+            android:ems="10"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/phoneEdit"
+            android:layout_width="201dp"
+            android:layout_height="58dp"
+            android:layout_weight="0"
+            android:text="מספר טלפון:"
+            android:textColor="#050505"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="411dp"
+        android:layout_height="53dp"
+        android:layout_gravity="center"
+        android:layout_margin="100dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="לשינוי סיסמה הקש כאן"
+        android:textColor="#0B0A0A"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/editBtn"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="#070B9EAA "
+        android:gravity="center_horizontal"
+        android:text="שמור"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:strokeColor="#FFFFFF" />
+
+
+</LinearLayout>
+
+
+
+
+
+
+

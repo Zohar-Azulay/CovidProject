@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".ui.HomeAdmin">
+
+    <TextView
+        android:id="@+id/homePage"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="דף הבית"
+        android:textColor="#0B0B0B"
+        android:textSize="36sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/openReq"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="65dp"
+            android:backgroundTint="#070B9EAA "
+            android:text="הצגת בקשות פתוחות"
+            android:textColor="#000000"
+            app:strokeColor="#00BCD4" />
+
+        <Button
+            android:id="@+id/rtd"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="65dp"
+            android:backgroundTint="#070B9EAA "
+            android:text="דיווח למפתחים על בעיות בתוכנה"
+            android:textColor="#000000"
+            app:strokeColor="#00BCD4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/msg"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="65dp"
+            android:backgroundTint="#070B9EAA "
+            android:text="שליחת הודעת תפוצה"
+            android:textColor="#000000"
+            app:strokeColor="#00BCD4" />
+
+        <Button
+            android:id="@+id/edit"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="65dp"
+            android:backgroundTint="#070B9EAA "
+            android:text="עריכת פרטים אישיים"
+            android:textColor="#000000"
+            app:strokeColor="#00BCD4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <Button
+            android:id="@+id/reports"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="65dp"
+            android:backgroundTint="#070B9EAA "
+            android:text="הפקת דוחות"
+            android:textColor="#000000"
+            app:strokeColor="#00BCD4" />
+
+        <Button
+            android:id="@+id/deleteUser"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="65dp"
+            android:backgroundTint="#070B9EAA "
+            android:text="מחיקת משתמשים"
+            android:textColor="#000000"
+            app:strokeColor="#00BCD4" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/logOut"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="65dp"
+            android:backgroundTint="#070B9EAA "
+            android:text="התנתקות "
+            android:textColor="#000000"
+            app:strokeColor="#00BCD4" />
+
+        <Button
+            android:id="@+id/welfare"
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="65dp"
+            android:backgroundTint="#070B9EAA "
+            android:text="גורמי רווחה"
+            android:textColor="#000000"
+            app:strokeColor="#00BCD4" />
+    </LinearLayout>
+
+</LinearLayout>

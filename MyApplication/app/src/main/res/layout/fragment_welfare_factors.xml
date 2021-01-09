@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:layoutDirection="ltr"
+    tools:context=".ui.WelfareFactors">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/welfare1"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="גורמי רווחה"
+            android:textColor="#090909"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ListView
+                android:id="@+id/phoneList"
+                android:layout_width="match_parent"
+                android:layout_height="513dp"
+                android:layout_weight="1"
+                android:divider="#000"
+                android:dividerHeight="1dp"
+                android:textDirection="ltr" />
+
+            <ListView
+                android:id="@+id/welfareList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="100dp"
+                android:layout_weight="1"
+                android:divider="#000"
+                android:dividerHeight="1dp"
+                android:textDirection="rtl" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/welfareBtn"
+        android:layout_width="237dp"
+        android:layout_height="54dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="#070B9EAA "
+        android:gravity="center"
+        android:text="חזרה לדף הבית"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+</FrameLayout>

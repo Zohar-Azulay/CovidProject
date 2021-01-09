@@ -1,46 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
-
-
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-feature android:name="android.hardware.type.watch" />
-
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication"
-        tools:ignore="AllowBackup">
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-
-        <uses-library
-            android:name="com.google.android.wearable"
-            android:required="false" />
-        <!--
-               Set to true if your app is Standalone, that is, it does not require the handheld
-               app to run.
-        -->
-        <meta-data
-            android:name="com.google.android.wearable.standalone"
-            android:value="true" />
-
-        <activity android:name=".ui.MainActivity">
+        android:theme="@style/Theme.MyApplication">
+        <activity android:name=".ui.HomeAdmin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.EditPersonalDetails"> </activity>
+        <activity android:name=".ui.WelfareFactors"> </activity>
+        <activity android:name=".ui.openReq"> </activity>
+        <activity android:name=".ui.ReportToDevelopers"> </activity>
+        <activity android:name=".ui.DeleteUsers"> </activity>
+        <activity android:name=".ui.Reports"> </activity>
     </application>
 
 </manifest>

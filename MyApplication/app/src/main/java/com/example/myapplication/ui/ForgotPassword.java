@@ -28,17 +28,18 @@ public class ForgotPassword extends Fragment {
     private View objectForgotFragment;
     private Button resetPassword;
     private EditText resetEMailInput;
+    //private boolean flag;
     private FirebaseAuth mAuth;
 
     public ForgotPassword(){
-        //empty constructor
+        //empty
     }
 
     private void initializeVariables(){
         try{
             mAuth=FirebaseAuth.getInstance();
-            resetEMailInput=objectForgotFragment.findViewById(R.id.resetEmail);
-            resetPassword=objectForgotFragment.findViewById(R.id.resetPassBtn);
+            resetEMailInput=objectForgotFragment.findViewById(R.id.resetEmailA);
+            resetPassword=objectForgotFragment.findViewById(R.id.resetPassBtnA);
 
             resetPassword.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -58,6 +59,7 @@ public class ForgotPassword extends Fragment {
 
             if (!resetEMailInput.getText().toString().isEmpty()) {
                 if (mAuth != null) {
+                    //resetPassword.setEnabled(false);
                     mAuth.sendPasswordResetEmail(resetEMailInput.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -66,11 +68,8 @@ public class ForgotPassword extends Fragment {
                                         //flag=true;
                                         resetPassword.setEnabled(false);
                                         Toast.makeText(getContext(), "Please check your email for reset", Toast.LENGTH_LONG).show();
-                                        assert getFragmentManager() != null;
-
-                                        FragmentTransaction fr = getFragmentManager().beginTransaction();
-                                        fr.replace(R.id.fragment_container, new LoginV2()).addToBackStack("password-reset");
-                                        fr.commit();
+                                        startActivity(new Intent(getActivity().getApplicationContext(),EditPersonalDetails.class));
+                                        getActivity().finish();
                                     }
                                     else{
                                         resetPassword.setEnabled(true);
@@ -78,7 +77,7 @@ public class ForgotPassword extends Fragment {
                                         resPass();
                                     }
                                 }
-                    });
+                            });
                 }
 
             }
@@ -100,7 +99,6 @@ public class ForgotPassword extends Fragment {
                              Bundle savedInstanceState) {
         objectForgotFragment=inflater.inflate(R.layout.fragment_forgot_password,container,false);
         initializeVariables();
-
         return objectForgotFragment;
     }
 }
