@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Reports">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/reportsTxt"
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="הפקת דוחות"
+            android:textColor="#101010"
+            android:textSize="36sp" />
+
+        <ListView
+            android:id="@+id/reportTextView"
+            android:layout_width="match_parent"
+            android:layout_height="331dp"
+            android:layout_marginTop="15dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/ageAvg"
+                android:layout_width="221dp"
+                android:layout_height="78dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="50dp"
+                android:backgroundTint="#070B9EAA "
+                android:text="ממוצע גילאי המתנדבים"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/typeNum"
+                android:layout_width="221dp"
+                android:layout_height="78dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#070B9EAA "
+                android:text="כמות סוגי משתמשים"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</FrameLayout>

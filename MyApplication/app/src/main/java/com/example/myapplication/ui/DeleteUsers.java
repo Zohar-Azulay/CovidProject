@@ -117,7 +117,6 @@ public class DeleteUsers extends AppCompatActivity {
                     user.setEmail(ds.child("email").getValue(String.class));
                     user.setPhone(ds.child("phone").getValue(String.class));
                     user.setUserID(ds.child("userID").getValue(String.class) );
-                    //userInfo = "\n " + ds.child("name").getValue(String.class) + "\n " + ds.child("email").getValue(String.class) + "\n " + ds.child("phone").getValue(String.class) + "\n " + ds.child("userID").getValue(String.class) + "\n ";
                     arrayList.add(user);
                 }
                 delList.setAdapter(adapter);

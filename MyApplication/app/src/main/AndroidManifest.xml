@@ -15,13 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity"> </activity>
+
         <activity android:name=".ui.EditPersonalDetails"> </activity>
-        <activity android:name=".ui.RegisterUser"> </activity>
         <activity android:name=".ui.WelfareFactors"> </activity>
         <activity android:name=".ui.openReq"> </activity>
         <activity android:name=".ui.ReportToDevelopers"> </activity>
         <activity android:name=".ui.DeleteUsers"> </activity>
+        <activity android:name=".ui.Reports"> </activity>
     </application>
 
 </manifest>

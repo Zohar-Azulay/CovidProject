@@ -99,10 +99,6 @@ public class ForgotPassword extends Fragment {
                              Bundle savedInstanceState) {
         objectForgotFragment=inflater.inflate(R.layout.fragment_forgot_password,container,false);
         initializeVariables();
-//        assert getFragmentManager() != null;
-//        FragmentTransaction fr=getFragmentManager().beginTransaction();
-//        fr.replace(R.id.fragment_container,new PasswordReset());
-//        fr.commit();
         return objectForgotFragment;
     }
 }

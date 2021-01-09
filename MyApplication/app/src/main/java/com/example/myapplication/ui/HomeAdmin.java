@@ -30,7 +30,6 @@ public class HomeAdmin extends AppCompatActivity implements View.OnClickListener
 
         if(getIntent().hasExtra("id"))
             id = getIntent().getStringExtra(id);
-           // id = getIntent().getIntExtra("id",0);
 
         openReq = (Button) findViewById(R.id.openReq);
         rtd = (Button) findViewById(R.id.rtd);
@@ -73,6 +72,13 @@ public class HomeAdmin extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View v) {
                 openActivity(WelfareFactors.class);
+            }
+        });
+
+        reports.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(Reports.class);
             }
         });
 

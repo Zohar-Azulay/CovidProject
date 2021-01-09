@@ -68,12 +68,11 @@ public class openReq extends AppCompatActivity {
         spinnerList.add("סוג בקשה");
         spinnerAdapter = new ArrayAdapter<>(openReq.this, android.R.layout.simple_spinner_dropdown_item,spinnerList);
         sortSpinner.setAdapter(spinnerAdapter);
-//        sortByDate();
 
         reff =  FirebaseDatabase.getInstance().getReference("Requests");
         adapter =  new ArrayAdapter<RequestsDB>(this,android.R.layout.simple_list_item_1,arrayList);
 
-//        reff.child("dateStr").setValue(new Date());
+
         sortListView("status");
         sortSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

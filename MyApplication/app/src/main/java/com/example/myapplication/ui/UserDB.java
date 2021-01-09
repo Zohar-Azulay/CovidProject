@@ -13,27 +13,6 @@ public class UserDB {
     private String userType;
     private String password;
 
-    public UserDB(){
-    }
-/*
-    public UserDB(String userID, String name, String city, int birthYear, String email,String phone, String userType,String password){
-        this.userID = userID;
-        this.name = name;
-        this.city = city;
-        this.birthYear = birthYear;
-        this.email = email;
-        this.phone = phone;
-        this.userType = userType;
-        this.password = password;
-    }
-
-    public UserDB(String name, String email, String phone, String password) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.password = password;
-    }*/
-
     public String getUserID(){
         return this.userID;
     }
@@ -90,10 +69,6 @@ public class UserDB {
         return name + "\n" + email + "\n" + phone + "\n" + userID;
     }
 
-   /* @Override
-    public String toString() {
-       return name + ", " + city;
-    }*/
 
     public String toString() {
         return '\n' + name + '\n' + email + '\n' + phone + '\n' + userID + '\n';
