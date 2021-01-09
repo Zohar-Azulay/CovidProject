@@ -32,7 +32,7 @@ public class HomeFragmentV extends Fragment {
         btnFragment.setOnClickListener(v -> {
             assert getFragmentManager() != null;
             FragmentTransaction fr=getFragmentManager().beginTransaction();
-            fr.replace(R.id.fragment_container_v,new MapsFragment()).addToBackStack("pick-navigation");
+            fr.replace(R.id.fragment_container_v,new ContactPledger()).addToBackStack("pick-navigation");
             fr.commit();
         });
         return view;

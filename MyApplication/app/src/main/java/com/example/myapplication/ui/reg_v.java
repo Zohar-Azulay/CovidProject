@@ -28,6 +28,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 
@@ -57,6 +58,7 @@ public class reg_v extends Fragment {
     private  void initialize(){
         try{
             mAuth= FirebaseAuth.getInstance();
+            FirebaseMessaging.getInstance().subscribeToTopic("news");
             name=objectRegFragment.findViewById(R.id.reg_v_name);
             email=objectRegFragment.findViewById(R.id.reg_v_email);
             phone=objectRegFragment.findViewById(R.id.reg_v_phone);
@@ -169,6 +171,7 @@ public class reg_v extends Fragment {
         String yearStr = year.getSelectedItem().toString();
 
 
+        userObj.setVacation(false);
         userObj.setName(nameStr);
         userObj.setPhone(phoneStr);
         userObj.setEmail(emailStr);
@@ -181,41 +184,7 @@ public class reg_v extends Fragment {
         String id = String.valueOf(userObj.getUserID());
         reff.child(id).setValue(userObj);
 
-
-
     }
-
-//    // שם טלפון שנת לידה
-//    private void userExist(String nameStr, String phoneStr, String yearStr) {
-//        reff = FirebaseDatabase.getInstance().getReference().child("משתמשים");
-//        reff.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                String dbName, dbPhone, dbYear;
-//                for (DataSnapshot item : snapshot.getChildren()) {
-//                    dbName = item.child("name").getValue(String.class);
-//                    if(nameStr.equals(dbName)){
-//                        dbPhone = item.child("phone").getValue(String.class);
-//                        if(phoneStr.equals(dbPhone)){
-//                            dbYear = item.child("birthYear").getValue(String.class);
-//                            if(yearStr.equals(dbYear)) {
-//                                Log.d("MSG","user exists");
-//                            }
-//                        }
-//                    }
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//
-//
-//
-//    }
 
     @Nullable
     @Override

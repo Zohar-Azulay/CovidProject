@@ -113,14 +113,11 @@ public class LoginV2 extends Fragment {
                                                     break;
                                             }
                                         }
-
                                         @Override
                                         public void onCancelled(@NonNull DatabaseError error) {
 
                                         }
                                     });
-
-
                                 }
                             }
 
@@ -144,7 +141,6 @@ public class LoginV2 extends Fragment {
             Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -153,5 +149,4 @@ public class LoginV2 extends Fragment {
 
         return objectSignInFragment;
     }
-
 }

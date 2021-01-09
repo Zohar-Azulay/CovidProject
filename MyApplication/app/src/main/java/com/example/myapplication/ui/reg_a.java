@@ -179,37 +179,7 @@ public class reg_a extends Fragment {
 
     }
 
-//    // שם טלפון שנת לידה
-//    private void userExist(String nameStr, String phoneStr, String yearStr) {
-//        reff = FirebaseDatabase.getInstance().getReference().child("משתמשים");
-//        reff.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                String dbName, dbPhone, dbYear;
-//                for (DataSnapshot item : snapshot.getChildren()) {
-//                    dbName = item.child("name").getValue(String.class);
-//                    if(nameStr.equals(dbName)){
-//                        dbPhone = item.child("phone").getValue(String.class);
-//                        if(phoneStr.equals(dbPhone)){
-//                            dbYear = item.child("birthYear").getValue(String.class);
-//                            if(yearStr.equals(dbYear)) {
-//                                Log.d("MSG","user exists");
-//                            }
-//                        }
-//                    }
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//
-//
-//
-//    }
+
 
     @Nullable
     @Override

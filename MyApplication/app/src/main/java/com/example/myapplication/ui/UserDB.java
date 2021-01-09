@@ -5,7 +5,7 @@ import android.util.Log;
 import org.jetbrains.annotations.NotNull;
 
 public class UserDB {
-
+    private boolean vacation;
     private String userID;
     private String name;
     private String city;
@@ -16,16 +16,6 @@ public class UserDB {
     public UserDB(){
 
     }
-//    public UserDB(String userID, String name, String city,String birthYear, String email,String phone, String userType){
-//        this.userID = userID;
-//        this.name = name;
-//        this.city = city;
-//        this.birthYear = birthYear;
-//        this.email = email;
-//        this.phone = phone;
-//        this.userType = userType;
-//
-//    }
 
     public String getUserID(){ return this.userID;    }
     public String getName(){
@@ -44,6 +34,7 @@ public class UserDB {
         return this.phone;
     }
     public String getUserType(){ return this.userType; }
+    public boolean getVacation(){ return this.vacation; }
 
     public void setUserID(String id){
         userID = id;
@@ -64,6 +55,7 @@ public class UserDB {
     public void setUserType(String userType){
         this.userType = userType;
     }
+    public void setVacation(boolean vacation){this.vacation=vacation;}
 
     @NotNull
     @Override
