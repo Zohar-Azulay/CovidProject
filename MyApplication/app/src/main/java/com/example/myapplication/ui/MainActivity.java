@@ -7,6 +7,7 @@ import com.google.firebase.FirebaseApp;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 
 import androidx.fragment.app.FragmentTransaction;
 
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
 
-        fragmentTransaction.add(R.id.fragment_container,new homePageV());
+        fragmentTransaction.add(R.id.fragment_container,new LoginV2());
         fragmentTransaction.commit();
     }
     @Override

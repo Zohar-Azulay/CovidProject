@@ -8,9 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import com.example.myapplication.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class homePageV extends Fragment {
+    private FirebaseAuth mAuth;
 
 
     @Override
@@ -19,9 +21,11 @@ public class homePageV extends Fragment {
 
         View view;
         view = inflater.inflate(R.layout.fragment_home_page_v, container, false);
+        mAuth=FirebaseAuth.getInstance();
         Button btnopenReq = (Button) view.findViewById(R.id.button30);
         Button btnedit = (Button) view.findViewById(R.id.button31);
         Button btnvacation = (Button) view.findViewById(R.id.button36);
+        Button btnsingout = (Button) view.findViewById(R.id.button35);      //-----------change the singout----------
 
         btnopenReq.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +58,19 @@ public class homePageV extends Fragment {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container, new editDetV()).addToBackStack("to edit");
                 fr.commit();
+            }
+
+        });
+        btnsingout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View V) {
+                if (mAuth!=null){
+                    mAuth.signOut();
+                    assert getFragmentManager() != null;
+                    FragmentTransaction fr = getFragmentManager().beginTransaction();
+                    fr.replace(R.id.fragment_container, new LoginV2()).addToBackStack("singout");
+                    fr.commit();
+                }
             }
 
         });
