@@ -34,13 +34,6 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
-        <activity
-            android:name=".ui.HomePageA"
-            android:label="@string/title_activity_home_page" />
-        <activity
-            android:name=".ui.HomePageP"
-            android:label="@string/title_activity_home_page_p" />
-        <activity android:name=".ui.HomePageV" />
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
