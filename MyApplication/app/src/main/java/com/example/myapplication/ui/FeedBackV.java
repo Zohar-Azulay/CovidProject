@@ -20,8 +20,8 @@ import com.google.firebase.FirebaseApp;
 
 public class FeedBackV extends AppCompatActivity {
 //add this
-    EditText etSubject, etMessage;
-    Button bt_send;
+    EditText etSubjectV, etMessageV;
+    Button bt_sendV;
     String et_to = "zoharazulay31@gmail.com";
 
     @Override
@@ -31,12 +31,12 @@ public class FeedBackV extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
 
 
-        etSubject = (EditText) findViewById(R.id.et_toSubject);
-        etMessage = (EditText) findViewById(R.id.et_message);
-        bt_send = (Button) findViewById(R.id.bt_send);
+        etSubjectV = (EditText) findViewById(R.id.et_toSubject);
+        etMessageV = (EditText) findViewById(R.id.et_message);
+        bt_sendV = (Button) findViewById(R.id.bt_send);
 
 
-        bt_send.setOnClickListener(new View.OnClickListener() {
+        bt_sendV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendEmail();
@@ -55,8 +55,8 @@ public class FeedBackV extends AppCompatActivity {
 
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
         emailIntent.putExtra(Intent.EXTRA_CC, CC);
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, etSubject.getText().toString());
-        emailIntent.putExtra(Intent.EXTRA_TEXT, etMessage.getText().toString());
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, etSubjectV.getText().toString());
+        emailIntent.putExtra(Intent.EXTRA_TEXT, etMessageV.getText().toString());
 
         try {
             startActivity(Intent.createChooser(emailIntent, "Send mail..."));

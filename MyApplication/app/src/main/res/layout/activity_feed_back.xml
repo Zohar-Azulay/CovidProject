@@ -11,7 +11,7 @@
     tools:context=".ui.FeedBackV">
 
     <EditText
-        android:id="@+id/et_toSubject"
+        android:id="@+id/et_toSubjectV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -22,7 +22,7 @@
 
 
     <EditText
-        android:id="@+id/et_message"
+        android:id="@+id/et_messageV"
         android:layout_width="match_parent"
         android:layout_height="718dp"
         android:layout_marginTop="10dp"
@@ -34,7 +34,7 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/bt_send"
+        android:id="@+id/bt_sendV"
         android:layout_width="212dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
