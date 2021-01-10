@@ -22,7 +22,7 @@ public class FeedBackV extends AppCompatActivity {
 //add this
     EditText etSubjectV, etMessageV;
     Button bt_sendV;
-    String et_to = "zoharazulay31@gmail.com";
+    String et_toV = "zoharazulay31@gmail.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,18 +48,18 @@ public class FeedBackV extends AppCompatActivity {
 
         String[] TO = {"zoharazulay31@gmail.com"};
         String[] CC = {"zoharazulay31@gmail.com"};
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.setType("text/plain");
+        Intent emailIntentV = new Intent(Intent.ACTION_SEND);
+        emailIntentV.setData(Uri.parse("mailto:"));
+        emailIntentV.setType("text/plain");
 
 
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-        emailIntent.putExtra(Intent.EXTRA_CC, CC);
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, etSubjectV.getText().toString());
-        emailIntent.putExtra(Intent.EXTRA_TEXT, etMessageV.getText().toString());
+        emailIntentV.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntentV.putExtra(Intent.EXTRA_CC, CC);
+        emailIntentV.putExtra(Intent.EXTRA_SUBJECT, etSubjectV.getText().toString());
+        emailIntentV.putExtra(Intent.EXTRA_TEXT, etMessageV.getText().toString());
 
         try {
-            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            startActivity(Intent.createChooser(emailIntentV, "Send mail..."));
             finish();
             Log.i("Finished sending email...", "");
         } catch (android.content.ActivityNotFoundException ex) {
