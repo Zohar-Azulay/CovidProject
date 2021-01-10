@@ -49,7 +49,7 @@ public class new_pledge extends Fragment {
 
     private String cDay, cMonth, cYear, cHour, cMinute, cSecond, startTime;
 
-    private Requests reqObj;
+    private RequestsDB reqObj;
 
     public new_pledge(){
         // Empty constractor;
@@ -65,7 +65,7 @@ public class new_pledge extends Fragment {
 
     private void initialize(){
         try {
-            reqObj = new Requests();
+            reqObj = new RequestsDB();
             confirm_pledge = viewObj.findViewById(R.id.btn_new_req_confirm);
             day = viewObj.findViewById(R.id.new_pledge_day);
             month = viewObj.findViewById(R.id.new_pledge_month);
@@ -147,8 +147,8 @@ public class new_pledge extends Fragment {
         date = new Date(Integer.parseInt(yearStr), Integer.parseInt(monthStr), Integer.parseInt(dayStr));
         time = hourStr + ':' + minuteStr;
 
-        reqObj.setPledger_uid(uid);
-        reqObj.setHelper_uid(null);
+        reqObj.setPleggerUid(uid);
+        //reqObj.setHelper_uid(null);
         reqObj.setDate(date);
         reqObj.setTime(time);
         reqObj.setType(typeStr);

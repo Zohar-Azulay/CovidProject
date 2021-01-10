@@ -90,20 +90,24 @@ public class LoginV2 extends Fragment {
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                             String user_Type=snapshot.child("userType").getValue().toString();
                                             switch (user_Type) {
-//                                                case "1":
-//                                                    startActivity(new Intent(getActivity().getApplicationContext(), HomePageV.class));
-//                                                    objectProgressBar.setVisibility(View.INVISIBLE);
+                                                case "1":
 //
-//                                                    signInBtn.setEnabled(true);
-//                                                    getActivity().finish();
-//                                                    break;
-//                                                case "2":
-//                                                    startActivity(new Intent(getActivity().getApplicationContext(), HomePageP.class));
-//                                                    objectProgressBar.setVisibility(View.INVISIBLE);
+                                                    objectProgressBar.setVisibility(View.INVISIBLE);
+                                                    assert getFragmentManager() != null;
+                                                    FragmentTransaction fr=getFragmentManager().beginTransaction();
+                                                    fr.replace(R.id.fragment_container,new homePageV()).addToBackStack("login-helper");
+                                                    fr.commit();
+                                                    signInBtn.setEnabled(true);
 //
-//                                                    signInBtn.setEnabled(true);
-//                                                    getActivity().finish();
-//                                                    break;
+                                                    break;
+                                                case "2":
+                                                        objectProgressBar.setVisibility(View.INVISIBLE);
+                                                        assert getFragmentManager() != null;
+                                                        FragmentTransaction fr1=getFragmentManager().beginTransaction();
+                                                         fr1.replace(R.id.fragment_container,new main_p()).addToBackStack("login-pledger");
+                                                        fr1.commit();
+                                                        signInBtn.setEnabled(true);
+                                                    break;
                                                 case "3":
 
                                                     startActivity(new Intent(getActivity().getApplicationContext(), HomeAdmin.class).putExtra("id",uid));

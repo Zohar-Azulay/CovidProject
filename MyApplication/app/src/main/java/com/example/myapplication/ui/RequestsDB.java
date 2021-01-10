@@ -12,6 +12,11 @@ public class RequestsDB {
     private String pleggerUid;
     private boolean status;
     private String type;
+    private String startTime;
+
+    public RequestsDB(String type, Date date, String time) {
+    }
+    public RequestsDB(){}
 
 
     public Date getDate() {
@@ -61,6 +66,9 @@ public class RequestsDB {
     public void setType(String type) {
         this.type = type;
     }
+
+    public void setStartTime(String start){ this.startTime = start;}
+
 
     @Override
     public String toString() {

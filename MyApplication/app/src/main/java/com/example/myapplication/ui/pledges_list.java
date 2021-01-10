@@ -43,8 +43,8 @@ public class pledges_list extends AppCompatActivity {
     private FirebaseDatabase reffPledges;
     private String currentUserUID;
 
-    private ArrayList<Requests>  pledgedList = new ArrayList<Requests>();
-    private ArrayAdapter<Requests> PlgListAdapter;
+    private ArrayList<RequestsDB>  pledgedList = new ArrayList<RequestsDB>();
+    private ArrayAdapter<RequestsDB> PlgListAdapter;
 
     public pledges_list() {
         // Empty constractor
@@ -55,10 +55,10 @@ public class pledges_list extends AppCompatActivity {
     private ListView openReqList;
     private DatabaseReference reff;
 
-    private ArrayList<Requests> arrayList = new ArrayList<Requests>();
-    private ArrayAdapter<Requests> adapter;
+    private ArrayList<RequestsDB> arrayList = new ArrayList<RequestsDB>();
+    private ArrayAdapter<RequestsDB> adapter;
 
-    private Requests req = new Requests();
+    private RequestsDB req = new RequestsDB();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class pledges_list extends AppCompatActivity {
 
         openReqList = (ListView) findViewById(R.id.pledges_list);
         reff =  FirebaseDatabase.getInstance().getReference("Requests");
-        adapter =  new ArrayAdapter<Requests>(this,android.R.layout.simple_list_item_1,arrayList);
+        adapter =  new ArrayAdapter<RequestsDB>(this,android.R.layout.simple_list_item_1,arrayList);
         sortListView();
     }
 
@@ -87,7 +87,7 @@ public class pledges_list extends AppCompatActivity {
                 for(DataSnapshot ds : snapshot.getChildren()){
                     String temp = ds.child("pledger_uid").getValue(String.class);
                     if (ds.child("pledger_uid").getValue(String.class).equals(currentUserUID)) {
-                        req = new Requests();
+                        req = new RequestsDB();
                         dateStr = ds.child("date").getValue(String.class);
                         if (dateStr != null && dateStr.length() == 10) {
                             year = Integer.parseInt(dateStr.substring(6, 10));

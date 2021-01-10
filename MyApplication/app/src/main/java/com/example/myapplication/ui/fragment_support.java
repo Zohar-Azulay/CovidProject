@@ -25,7 +25,7 @@ public class fragment_support extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_pledger_container, new main_p());
+                fr.replace(R.id.fragment_container, new main_p());
                 fr.commit();
             }
         });

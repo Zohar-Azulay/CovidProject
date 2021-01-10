@@ -15,16 +15,16 @@ import com.example.myapplication.R;
 import java.text.DateFormat;
 import java.util.ArrayList;
 
-public class PlgListAdapter extends ArrayAdapter<Requests> {
+public class PlgListAdapter extends ArrayAdapter<RequestsDB> {
 
     private static final String TAG = "PlgListAdapter";
 
     private Context mContext;
     private int mResource;
-    private Requests pledge;
+    private RequestsDB pledge;
 
 
-    public PlgListAdapter(@NonNull android.content.Context context, int resource, @NonNull ArrayList<Requests> objects) {
+    public PlgListAdapter(@NonNull android.content.Context context, int resource, @NonNull ArrayList<RequestsDB> objects) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
@@ -37,7 +37,7 @@ public class PlgListAdapter extends ArrayAdapter<Requests> {
         String date = DateFormat.getDateInstance(DateFormat.SHORT).format(getItem(position).getDate());
         String time = getItem(position).getTime();
 
-        pledge = new Requests(type, getItem(position).getDate(), time);
+        pledge = new RequestsDB(type, getItem(position).getDate(), time);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
