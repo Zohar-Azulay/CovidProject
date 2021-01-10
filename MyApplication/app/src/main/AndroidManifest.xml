@@ -36,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.openReq"
+            android:name=".ui.openReqV"
             android:label="@string/title_activity_open_req">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
