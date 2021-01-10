@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">CovAid</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -12,17 +12,47 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="registration">הרשמה</string>
     <string name="fullname">שם מלא</string>
+    <string name="fullname_hint">שם פרטי ושם משפחה</string>
     <string name="yearofbirth">שנת לידה</string>
-    <string name="address">כתובת</string>
-    <string name="email">כתובת מייל</string>
-    <string name="cellphone">מספר טלפון</string>
+    <string name="city">עיר מגורים</string>
+    <string name="email">מייל</string>
+    <string name="email_hint">כתובת דואר אלקטרוני</string>
+    <string name="cellphone">מס. טלפון</string>
     <string name="password">סיסמה</string>
+    <string name="password_hint">הזן/י סיסמה בת לפחות 8 תווים</string>
     <string name="taknon">קראתי ואני מאשר/ת את התקנון</string>
     <string name="confirm_reg">הרשמה</string>
     <string name="pledger_history">הבקשות שלך</string>
     <string name="pledger_ask">בקש עזרה</string>
     <string name="pledger_your_pledges">הבקשות שלך</string>
     <string name="pledger_edit_details">עריכת פרטים אישיים</string>
-
-
+    <string name="support_button">btn_support</string>
+    <string name="pledger_requests_list">Pledger requests list</string>
+    <string name="pledger_open_request_title">בקשה פתוחה</string>
+    <string name="pledger_call_volunteer">התקשר למתנדב</string>
+    <string name="pledger_close_request">סגור בקשה</string>
+    <string name="quit_app">יציאה</string>
+    <string name="increase">(+) הגדל (+)</string>
+    <string name="decrease">(-) הקטן (-)</string>
+    <string name="my_profile">הפרופיל שלי</string>
+    <string name="support_message">שלח הודעה מפורטת למנהל האזור ונציג יחזור אליך בהקדם
+    </string>
+    <string name="support_icon">עזרה</string>
+    <string name="send_support">שלח</string>
+    <string name="support_hint">רשום פה מה שאתה רוצה שנדע…</string>
+    <string name="cellphone_hint"> </string>
+    <string name="edit_details_title">עריכת פרטים אישיים</string>
+    <string name="save_changes">שמור שינויים</string>
+    <string name="new_pledge_title">בקשה חדשה</string>
+    <string name="new_pledge_continue">המשך</string>
+    <string name="new_pledge_details_title">פרטי בקשה חדשה</string>
+    <string name="new_pledge_confirm">פרסם בקשה</string>
+    <string name="title_activity_pledger">PledgerActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_pldge_list">pldge_list</string>
+    <string name="title_activity_open_pldge">openPldge</string>
 </resources>

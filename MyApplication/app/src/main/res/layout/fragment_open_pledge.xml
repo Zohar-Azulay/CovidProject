@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/open_req_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_background"
+    android:orientation="vertical"
+    tools:context=".ui.open_req_p">
+
+
+    <TextView
+        android:id="@+id/new_pledge_details_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/pledger_open_request_title"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+
+    <LinearLayout
+        android:id="@+id/Button_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <Button
+            android:id="@+id/btn_call_volunteer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_weight="80"
+            android:gravity="center"
+            android:layoutDirection="rtl"
+            android:text="@string/pledger_call_volunteer"
+            android:textColor="@color/btm_text"
+            android:textSize="36sp"
+            app:iconGravity="textEnd|textStart" />
+
+        <Button
+            android:id="@+id/btn_close_request"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_margin="20dp"
+            android:layout_weight="80"
+            android:gravity="center"
+            android:layoutDirection="rtl"
+            android:text="@string/pledger_close_request"
+            android:textColor="@color/btm_text"
+            android:textSize="36sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

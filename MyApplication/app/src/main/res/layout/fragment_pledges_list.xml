@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".ui.pledges_list">
+
+    <TextView
+        android:id="@+id/pledges_list_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:text="רשימת הבקשות שלך"
+        android:textSize="36sp"
+        tools:ignore="HardcodedText" />
+
+    <ListView
+        android:id="@+id/pledges_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:contextClickable="true"
+        android:textDirection="rtl" />
+
+    <Button
+        android:id="@+id/btn_pledges_list_continue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:layoutDirection="rtl"
+        android:text="פתח בקשה"
+        android:textColor="@color/btm_text"
+        android:textSize="36sp"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:id="@+id/open_req_layout"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:background="@color/green_background"-->
+    <!--    android:orientation="vertical"-->
+    <!--    tools:context=".ui.pledges_list">-->
