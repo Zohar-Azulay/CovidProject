@@ -47,7 +47,7 @@ public class openReqV extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_open_req);
+        setContentView(R.layout.activity_open_reqV);
 
         if(getIntent().hasExtra("id"))
             id = getIntent().getStringExtra(id);
