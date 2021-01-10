@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/open_req_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green_background"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context=".ui.pledges_list">
-
 
     <TextView
         android:id="@+id/pledges_list_title"
@@ -41,7 +38,16 @@
         android:textSize="36sp"
         tools:ignore="HardcodedText" />
 
-
-
-
 </LinearLayout>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:id="@+id/open_req_layout"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:background="@color/green_background"-->
+    <!--    android:orientation="vertical"-->
+    <!--    tools:context=".ui.pledges_list">-->

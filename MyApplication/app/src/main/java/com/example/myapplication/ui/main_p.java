@@ -1,5 +1,7 @@
 package com.example.myapplication.ui;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,13 +18,14 @@ import com.example.myapplication.R;
 
 public class main_p extends Fragment {
 
+
+    private String id ="";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main_p, container, false);
-//        Toast.makeText(getContext(), "ברוכים השבים", Toast.LENGTH_LONG).show();
 
         Button btnNewP = view.findViewById(R.id.btn_ask);
         Button btnYourP = view.findViewById(R.id.btn_your_pledges);
@@ -52,10 +55,13 @@ public class main_p extends Fragment {
         btnYourP.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                assert getFragmentManager() != null;
-                FragmentTransaction fr_newP = getFragmentManager().beginTransaction();
-                fr_newP.replace(R.id.fragment_pledger_container, new pledges_list()).addToBackStack("switch to new pledge fragment");
-                fr_newP.commit();
+//                assert getFragmentManager() != null;
+                Intent intent = new Intent(getActivity().getApplication(), pledges_list.class);
+                startActivity(intent);
+//                ((Activity) getActivity()).overridePendingTransition(0,0);
+//                FragmentTransaction fr_newP = getFragmentManager().beginTransaction();
+//                fr_newP.replace(R.id.fragment_pledger_container, new pledges_list()).addToBackStack("switch to new pledge fragment");
+//                fr_newP.commit();
             }
         });
 

@@ -1,53 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/open_req_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green_background"
+    android:orientation="vertical"
     tools:context=".ui.open_req_p">
 
 
     <TextView
         android:id="@+id/new_pledge_details_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:text="@string/pledger_open_request_title"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0" />
+        android:textAlignment="center"
+        android:textSize="36sp" />
 
 
     <LinearLayout
         android:id="@+id/Button_Layout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="50dp"
-        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_pledge_details_title"
-        app:layout_constraintVertical_bias="0">
+        android:weightSum="100">
 
         <Button
             android:id="@+id/btn_call_volunteer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="80dp"
-            android:layout_marginVertical="50dp"
-            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:layout_weight="80"
             android:gravity="center"
             android:layoutDirection="rtl"
             android:text="@string/pledger_call_volunteer"
@@ -58,11 +46,10 @@
         <Button
             android:id="@+id/btn_close_request"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="80dp"
-            android:layout_marginVertical="50dp"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_margin="20dp"
+            android:layout_weight="80"
             android:gravity="center"
             android:layoutDirection="rtl"
             android:text="@string/pledger_close_request"
@@ -71,4 +58,4 @@
     </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

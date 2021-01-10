@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 
 import com.example.myapplication.R;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 
 public class PlgListAdapter extends ArrayAdapter<Requests> {
@@ -20,6 +21,8 @@ public class PlgListAdapter extends ArrayAdapter<Requests> {
 
     private Context mContext;
     private int mResource;
+    private Requests pledge;
+
 
     public PlgListAdapter(@NonNull android.content.Context context, int resource, @NonNull ArrayList<Requests> objects) {
         super(context, resource, objects);
@@ -31,10 +34,10 @@ public class PlgListAdapter extends ArrayAdapter<Requests> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         String type = getItem(position).getType();
-        String date = getItem(position).getDateStr();
-        String time = getItem(position).getTimeStr();
+        String date = DateFormat.getDateInstance(DateFormat.SHORT).format(getItem(position).getDate());
+        String time = getItem(position).getTime();
 
-        Requests pledge = new Requests(type, date, time);
+        pledge = new Requests(type, getItem(position).getDate(), time);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);

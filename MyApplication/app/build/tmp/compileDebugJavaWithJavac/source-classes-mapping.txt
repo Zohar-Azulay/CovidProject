@@ -2,6 +2,26 @@ com/example/myapplication/ui/open_pledge.java
  com.example.myapplication.ui.open_pledge
 com/example/myapplication/ui/pledge_list_item.java
  com.example.myapplication.ui.pledge_list_item
+com/example/myapplication/ui/PledgerActivity.java
+ com.example.myapplication.ui.PledgerActivity
+com/example/myapplication/ui/MainActivity.java
+ com.example.myapplication.ui.MainActivity
+com/example/myapplication/ui/UserDB.java
+ com.example.myapplication.ui.UserDB
+com/example/myapplication/ui/ForgotPassword.java
+ com.example.myapplication.ui.ForgotPassword
+ com.example.myapplication.ui.ForgotPassword$1
+ com.example.myapplication.ui.ForgotPassword$2
+com/example/myapplication/ui/reg_p.java
+ com.example.myapplication.ui.reg_p
+ com.example.myapplication.ui.reg_p$1
+ com.example.myapplication.ui.reg_p$2
+ com.example.myapplication.ui.reg_p$3
+com/example/myapplication/ui/fragment_support.java
+ com.example.myapplication.ui.fragment_support
+ com.example.myapplication.ui.fragment_support$1
+com/example/myapplication/BuildConfig.java
+ com.example.myapplication.BuildConfig
 com/example/myapplication/ui/LoginV2.java
  com.example.myapplication.ui.LoginV2
  com.example.myapplication.ui.LoginV2$1
@@ -9,38 +29,16 @@ com/example/myapplication/ui/LoginV2.java
  com.example.myapplication.ui.LoginV2$3
  com.example.myapplication.ui.LoginV2$4
  com.example.myapplication.ui.LoginV2$4$1
-com/example/myapplication/ui/reg_p.java
- com.example.myapplication.ui.reg_p
- com.example.myapplication.ui.reg_p$1
- com.example.myapplication.ui.reg_p$2
- com.example.myapplication.ui.reg_p$3
-com/example/myapplication/ui/Requests.java
- com.example.myapplication.ui.Requests
-com/example/myapplication/ui/PlgListAdapter.java
- com.example.myapplication.ui.PlgListAdapter
-com/example/myapplication/BuildConfig.java
- com.example.myapplication.BuildConfig
-com/example/myapplication/ui/MainActivity.java
- com.example.myapplication.ui.MainActivity
-com/example/myapplication/ui/UserDB.java
- com.example.myapplication.ui.UserDB
-com/example/myapplication/ui/PledgerActivity.java
- com.example.myapplication.ui.PledgerActivity
-com/example/myapplication/ui/new_pledge.java
- com.example.myapplication.ui.new_pledge
- com.example.myapplication.ui.new_pledge$1
 com/example/myapplication/ui/edit_details.java
  com.example.myapplication.ui.edit_details
  com.example.myapplication.ui.edit_details$1
  com.example.myapplication.ui.edit_details$2
  com.example.myapplication.ui.edit_details$3
-com/example/myapplication/ui/ForgotPassword.java
- com.example.myapplication.ui.ForgotPassword
- com.example.myapplication.ui.ForgotPassword$1
- com.example.myapplication.ui.ForgotPassword$2
-com/example/myapplication/ui/fragment_support.java
- com.example.myapplication.ui.fragment_support
- com.example.myapplication.ui.fragment_support$1
+com/example/myapplication/ui/new_pledge.java
+ com.example.myapplication.ui.new_pledge
+ com.example.myapplication.ui.new_pledge$1
+com/example/myapplication/ui/Requests.java
+ com.example.myapplication.ui.Requests
 com/example/myapplication/ui/main_p.java
  com.example.myapplication.ui.main_p
  com.example.myapplication.ui.main_p$1
@@ -50,4 +48,5 @@ com/example/myapplication/ui/main_p.java
 com/example/myapplication/ui/pledges_list.java
  com.example.myapplication.ui.pledges_list
  com.example.myapplication.ui.pledges_list$1
- com.example.myapplication.ui.pledges_list$2
+com/example/myapplication/ui/PlgListAdapter.java
+ com.example.myapplication.ui.PlgListAdapter

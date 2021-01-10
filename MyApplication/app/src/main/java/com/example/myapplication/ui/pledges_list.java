@@ -1,18 +1,22 @@
 package com.example.myapplication.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -25,94 +29,88 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
+import kotlin.text.UStringsKt;
 
 
-public class pledges_list extends Fragment {
+public class pledges_list extends AppCompatActivity {
 
     private final String TAG=" pledges_list";
     private FirebaseAuth mAuth;
     private DatabaseReference userDB;
     private FirebaseDatabase reffPledges;
     private String currentUserUID;
-    //    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-    private ListView listView;
-
-//    private ArrayList<String> importedList = new ArrayList<>();
+    private ArrayList<Requests>  pledgedList = new ArrayList<Requests>();
     private ArrayAdapter<Requests> PlgListAdapter;
-
-    ArrayList<Requests>  pledgedList = new ArrayList<>();
 
     public pledges_list() {
         // Empty constractor
     }
 
-    @Nullable
+    private String id = "";
+    private Button btn_openPledge;
+    private ListView openReqList;
+    private DatabaseReference reff;
+
+    private ArrayList<Requests> arrayList = new ArrayList<Requests>();
+    private ArrayAdapter<Requests> adapter;
+
+    private Requests req = new Requests();
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View pledgeListView = inflater.inflate(R.layout.fragment_pledges_list, container, false);
-        Toast.makeText(getContext(), "Pledges List- 1", Toast.LENGTH_SHORT).show();
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_pledges_list);
 
-//        Log.d(TAG, "OnCreateView: Started");
-        ImageButton btnSupport = pledgeListView.findViewById(R.id.btn_support);
-        Button btn_openPledge = pledgeListView.findViewById(R.id.btn_pledges_list_continue);
+        if(getIntent().hasExtra("id"))
+            id = getIntent().getStringExtra(id);
 
-        mAuth = FirebaseAuth.getInstance();
-        currentUserUID = mAuth.getCurrentUser().getUid();
-        userDB = FirebaseDatabase.getInstance().getReference().child("Requests");
-        Toast.makeText(getContext(), "Pledges List- 2", Toast.LENGTH_SHORT).show();
-        userDB.child(currentUserUID).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
-                    boolean isPledged = (boolean) postSnapshot.getValue();
-                    if(isPledged)
-//                        pledgedList.add(postSnapshot.child(""));
-                        Toast.makeText(getContext(), "Pledges List- 3", Toast.LENGTH_SHORT).show();
-
-                    pledgedList.add((Requests) postSnapshot.getValue()); // Casted
-//                        pledgedList.add(postSnapshot.getKey());           // Origin
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {  }  });
-        PlgListAdapter = new PlgListAdapter(this.getContext(),  R.layout.adapter_listview_layout, pledgedList);
-        listView.setAdapter(PlgListAdapter);
-
-        btnSupport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                assert getFragmentManager() != null;
-                FragmentTransaction fr_support = getFragmentManager().beginTransaction();
-                fr_support.replace(R.id.fragment_pledger_container, new fragment_support()).addToBackStack("switch to support fragment");
-                fr_support.commit();
-            }
-        });
-//
-//        btn_openPledge.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                assert getFragmentManager() != null;
-//                FragmentTransaction fr_open = getFragmentManager().beginTransaction();
-//                fr_open.replace(R.id.fragment_pledger_container, new open_pledge()).addToBackStack("switch to open pledge menu");
-//            }
-//        });
-
-
-
-
-//    @Override
-//    protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.fragment_pledges_list);
-//
-//        firebaseDatabase = FirebaseDatabase.getInstance();
-//        databaseReference = firebaseDatabase.getReference("");
-//    }
-
-        return pledgeListView;
+        openReqList = (ListView) findViewById(R.id.pledges_list);
+        reff =  FirebaseDatabase.getInstance().getReference("Requests");
+        adapter =  new ArrayAdapter<Requests>(this,android.R.layout.simple_list_item_1,arrayList);
+        sortListView();
     }
 
+    private void sortListView(){
+        arrayList.clear();
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int year, month, day;
+                String dateStr;
+                Date date;
+                mAuth = FirebaseAuth.getInstance();
+                currentUserUID = mAuth.getCurrentUser().getUid();
+                for(DataSnapshot ds : snapshot.getChildren()){
+                    String temp = ds.child("pledger_uid").getValue(String.class);
+                    if (ds.child("pledger_uid").getValue(String.class).equals(currentUserUID)) {
+                        req = new Requests();
+                        dateStr = ds.child("date").getValue(String.class);
+                        if (dateStr != null && dateStr.length() == 10) {
+                            year = Integer.parseInt(dateStr.substring(6, 10));
+                            month = Integer.parseInt(dateStr.substring(3, 5));
+                            day = Integer.parseInt(dateStr.substring(0, 2));
+                            date = new Date(year, month, day);
+                        } else date = Calendar.getInstance().getTime();
+                        req.setDate(date);
+                        req.setStartTime(ds.child("pledgeID").getValue(String.class));
+                        req.setStatus(ds.child("status").getValue(boolean.class));
+                        req.setType(ds.child("type").getValue(String.class));
+                        req.setTime(ds.child("time").getValue(String.class));
+                        arrayList.add(req);
+                   }
+                }
+                openReqList.setAdapter(adapter);
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
+    }
 
 }

@@ -41,10 +41,10 @@ public class new_pledge extends Fragment {
     private Spinner type;
     private Button confirm_pledge;
     private DatabaseReference reffSpinnerType, reffRequest; //= FirebaseDatabase.getInstance().getReference().child("");
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd - HH:mm:SS");
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd - HH:mm:ss");
     private ArrayList<String> typeArrayList = new ArrayList<>();
-    private String uid, openStr, dateStr, timeStr;
-    private Date openDateTime;
+    private String uid, openStr, time;
+    private Date openDateTime, date;
     private final FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     private String cDay, cMonth, cYear, cHour, cMinute, cSecond, startTime;
@@ -63,7 +63,6 @@ public class new_pledge extends Fragment {
         return viewObj;
     }
 
-
     private void initialize(){
         try {
             reqObj = new Requests();
@@ -80,7 +79,6 @@ public class new_pledge extends Fragment {
             showDataTypeSpinner();
 
             confirm_pledge.setOnClickListener(v -> createNewPledge());
-
         }
         catch (Exception e){
             Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -146,13 +144,13 @@ public class new_pledge extends Fragment {
         String minuteStr = minute.getText().toString().trim();
         String typeStr = type.getSelectedItem().toString();
 
-        dateStr = dayStr + '/' + monthStr + '/' + yearStr;
-        timeStr = hourStr + ':' + minuteStr;
+        date = new Date(Integer.parseInt(yearStr), Integer.parseInt(monthStr), Integer.parseInt(dayStr));
+        time = hourStr + ':' + minuteStr;
 
         reqObj.setPledger_uid(uid);
         reqObj.setHelper_uid(null);
-        reqObj.setDate(dateStr);
-        reqObj.setTime(timeStr);
+        reqObj.setDate(date);
+        reqObj.setTime(time);
         reqObj.setType(typeStr);
 
         cDay = String.valueOf(openDateTime.getDay());
@@ -163,18 +161,10 @@ public class new_pledge extends Fragment {
         cSecond = String.valueOf(openDateTime.getSeconds());
 
         startTime = cYear +  cMonth + cDay + cHour +  cMinute + cSecond;
+        reqObj.setStartTime(startTime);
+        reffRequest.child(startTime).setValue(reqObj);
 
-        reffRequest.child(openDateTime.toString()).setValue(reqObj);
+//        reffRequest.child(uid).child(startTime).setValue(reqObj);
     }
 
-//    private void updatePledgeID(){
-//        reffRequest.child().once('value').then(function(snap) {
-//            var data = snap.val();
-//            data.bookInfo.bookTitle = newTitle;
-//            var update = {};
-//            update[oldTitle] = null;
-//            update[newTitle] = data;
-//            return booksRef.update(update);
-//        });
-//    }
 }
