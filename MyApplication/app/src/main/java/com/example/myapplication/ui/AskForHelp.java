@@ -34,7 +34,7 @@ public class AskForHelp extends Fragment {
                              Bundle savedInstanceState) {
         View view;
         view = inflater.inflate(R.layout.fragment_ask_for_help,container,false);
-        reqObj=new Requests();
+        reqObj=new RequestsDB();
         enterPhone=view.findViewById(R.id.editTextPhone);
         Button btnFragment=(Button)view.findViewById(R.id.ask_for_reg_help);
         reffRequest = FirebaseDatabase.getInstance().getReference().child("Requests");
@@ -68,7 +68,7 @@ public class AskForHelp extends Fragment {
 
 
         reqObj.setType("עזרה בהרשמה");
-        reqObj.setPledger_uid(phone);
+        reqObj.setPleggerUid(phone);
 
 
         reffRequest.child(openDateTime).setValue(reqObj);
