@@ -88,7 +88,7 @@ public class reg_a extends Fragment {
                                 Toast.makeText(getContext(), "User created", Toast.LENGTH_SHORT).show();
                                 uid=mAuth.getCurrentUser().getUid();
                                 updateToDB();
-                                startActivity(new Intent(getActivity().getApplicationContext(), HomePageA.class));
+                                startActivity(new Intent(getActivity().getApplicationContext(), HomeAdmin.class).putExtra("id",uid));
                                 signUpBtnA.setEnabled(true);
                                 getActivity().finish();
                             }

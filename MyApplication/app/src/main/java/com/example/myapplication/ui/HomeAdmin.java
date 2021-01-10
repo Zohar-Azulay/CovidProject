@@ -14,6 +14,7 @@ import android.widget.Button;
 
 import com.example.myapplication.R;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.lang.ref.WeakReference;
 
@@ -21,7 +22,7 @@ public class HomeAdmin extends AppCompatActivity implements View.OnClickListener
 
     private String id = "LYCkp9YAw4StPahWyZncXg3b6R63";
     private Button openReq, rtd, msg, edit, reports,deleteUser, logOut, welfare;
-
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class HomeAdmin extends AppCompatActivity implements View.OnClickListener
 
         if(getIntent().hasExtra("id"))
             id = getIntent().getStringExtra(id);
-
+        mAuth=FirebaseAuth.getInstance();
         openReq = (Button) findViewById(R.id.openReq);
         rtd = (Button) findViewById(R.id.rtd);
         msg = (Button) findViewById(R.id.msg);
@@ -89,6 +90,14 @@ public class HomeAdmin extends AppCompatActivity implements View.OnClickListener
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
 
+            }
+        });
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                startActivity(new Intent(HomeAdmin.this,MainActivity.class));
+                finish();
             }
         });
     }

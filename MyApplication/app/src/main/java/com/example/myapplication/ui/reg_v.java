@@ -92,9 +92,9 @@ public class reg_v extends Fragment {
                                                           Toast.makeText(getContext(), "User created", Toast.LENGTH_SHORT).show();
                                                           uid=mAuth.getCurrentUser().getUid();
                                                           updateToDB();
-                                                          startActivity(new Intent(getActivity().getApplicationContext(), HomePageV.class));
+                                                          //startActivity(new Intent(getActivity().getApplicationContext(), HomePageV.class));
                                                           signUpBtn.setEnabled(true);
-                                                          getActivity().finish();
+                                                         // getActivity().finish();
                                                       }
                                                   }
 

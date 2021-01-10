@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.myapplication.R;
 
@@ -16,7 +17,8 @@ public class Container extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        Toast.makeText(this, "we are here", Toast.LENGTH_SHORT).show();
+        setContentView(R.layout.fragment_container);
 
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
 

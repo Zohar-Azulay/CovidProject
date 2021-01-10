@@ -106,9 +106,9 @@ public class reg_p extends Fragment {
                                 uid = mAuth.getCurrentUser().getUid();
                                 progressBar.setVisibility(View.INVISIBLE);
                                 updateDB();
-                                startActivity(new Intent(getActivity().getApplicationContext(), HomePageP.class));
+                               // startActivity(new Intent(getActivity().getApplicationContext(), HomePageP.class));
                                 signUpBtn.setEnabled(true);
-                                getActivity().finish();
+                               // getActivity().finish();
                             })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override

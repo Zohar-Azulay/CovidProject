@@ -90,22 +90,23 @@ public class LoginV2 extends Fragment {
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                             String user_Type=snapshot.child("userType").getValue().toString();
                                             switch (user_Type) {
-                                                case "1":
-                                                    startActivity(new Intent(getActivity().getApplicationContext(), HomePageV.class));
-                                                    objectProgressBar.setVisibility(View.INVISIBLE);
-
-                                                    signInBtn.setEnabled(true);
-                                                    getActivity().finish();
-                                                    break;
-                                                case "2":
-                                                    startActivity(new Intent(getActivity().getApplicationContext(), HomePageP.class));
-                                                    objectProgressBar.setVisibility(View.INVISIBLE);
-
-                                                    signInBtn.setEnabled(true);
-                                                    getActivity().finish();
-                                                    break;
+//                                                case "1":
+//                                                    startActivity(new Intent(getActivity().getApplicationContext(), HomePageV.class));
+//                                                    objectProgressBar.setVisibility(View.INVISIBLE);
+//
+//                                                    signInBtn.setEnabled(true);
+//                                                    getActivity().finish();
+//                                                    break;
+//                                                case "2":
+//                                                    startActivity(new Intent(getActivity().getApplicationContext(), HomePageP.class));
+//                                                    objectProgressBar.setVisibility(View.INVISIBLE);
+//
+//                                                    signInBtn.setEnabled(true);
+//                                                    getActivity().finish();
+//                                                    break;
                                                 case "3":
-                                                    startActivity(new Intent(getActivity().getApplicationContext(), HomePageA.class));
+
+                                                    startActivity(new Intent(getActivity().getApplicationContext(), HomeAdmin.class).putExtra("id",uid));
                                                     objectProgressBar.setVisibility(View.INVISIBLE);
 
                                                     signInBtn.setEnabled(true);

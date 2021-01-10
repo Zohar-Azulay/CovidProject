@@ -42,7 +42,7 @@ public class EditPersonalDetails extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.fragment_edit_personal_details);
-
+        mAuth=FirebaseAuth.getInstance();
         if(mAuth != null)
             uid=mAuth.getCurrentUser().getUid();
 
@@ -64,7 +64,7 @@ public class EditPersonalDetails extends AppCompatActivity implements View.OnCli
         pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EditPersonalDetails.this, Container.class);
+                Intent intent = new Intent(EditPersonalDetails.this, Container.class).putExtra("id",uid);
                 startActivity(intent);
             }
         });
@@ -98,9 +98,7 @@ public class EditPersonalDetails extends AppCompatActivity implements View.OnCli
         if (!cityStr.equals("--בחר עיר--")) {
             reffEditText.child("משתמשים").child(String.valueOf(uid)).child("city").setValue(cityStr);
 
-
         }
-
     }
 
     @Override
