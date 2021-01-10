@@ -1,9 +1,11 @@
 package com.example.myapplication.ui;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -47,9 +49,11 @@ public class openReq extends AppCompatActivity {
 
     private ArrayList<RequestsDB> arrayList = new ArrayList<RequestsDB>();
     private ArrayAdapter<RequestsDB> adapter;
+//    private ListView delList;
 
     private RequestsDB req = new RequestsDB();
-//    private String selected;
+    private String selected;
+//    private String selectedID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,26 +72,25 @@ public class openReq extends AppCompatActivity {
         spinnerList.add("סוג בקשה");
         spinnerAdapter = new ArrayAdapter<>(openReq.this, android.R.layout.simple_spinner_dropdown_item,spinnerList);
         sortSpinner.setAdapter(spinnerAdapter);
-//        sortByDate();
 
         reff =  FirebaseDatabase.getInstance().getReference("Requests");
         adapter =  new ArrayAdapter<RequestsDB>(this,android.R.layout.simple_list_item_1,arrayList);
 
+
 //        reff.child("dateStr").setValue(new Date());
         sortListView("status");
-//        openRecList.setClickable(true);
-//        openRecList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                int index =(int) openRecList.getItemIdAtPosition(position);
-//                RequestsDB select = arrayList.get(index);
-//                selected=select.getPledgeID();
-//                uid=mAuth.getCurrentUser().getUid();
-//                select.setHelper_uid(uid);
-//
-//
-//            }
-//        });
+        openRecList.setClickable(true);
+        openRecList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int index =(int) openRecList.getItemIdAtPosition(position);
+                RequestsDB select = arrayList.get(index);
+                selected=select.getPledgeID();
+                uid=mAuth.getCurrentUser().getUid();
+                select.setHelper_uid(uid);
+
+            }
+        });
 
         sortSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

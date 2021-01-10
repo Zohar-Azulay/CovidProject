@@ -28,7 +28,7 @@ public class homePageV extends Fragment {
         View view;
         view = inflater.inflate(R.layout.fragment_home_page_v, container, false);
         mAuth=FirebaseAuth.getInstance();
-//        Button btnopenReq = (Button) view.findViewById(R.id.button30);
+
         Button btnedit = (Button) view.findViewById(R.id.button31);
         Button btnvacation = (Button) view.findViewById(R.id.button36);
         Button btnsingout = (Button) view.findViewById(R.id.button35);      //-----------change the singout----------
@@ -45,15 +45,15 @@ public class homePageV extends Fragment {
             }
         });
 
-//        btnFeedB.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(),FeedBackV.class);
-//                startActivity(intent);
-//                ((Activity) getActivity()).overridePendingTransition(0,0);
-//
-//            }
-//        });
+        btnFeedB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),FeedBackV.class);
+                startActivity(intent);
+                ((Activity) getActivity()).overridePendingTransition(0,0);
+
+            }
+        });
 
         btnvacation.setOnClickListener(new View.OnClickListener() {
             @Override

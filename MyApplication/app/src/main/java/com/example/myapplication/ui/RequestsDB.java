@@ -75,4 +75,5 @@ public class RequestsDB {
     public String toString() {
         return  DateFormat.getDateInstance(DateFormat.SHORT).format(date) + " " + time + "\n" + pledgeID + '\n' + pleggerUid + '\n' + status + '\n' + type;
     }
+
 }
