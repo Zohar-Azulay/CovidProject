@@ -44,51 +44,36 @@ public class homePageV extends Fragment {
             }
         });
 
-        btnFeedB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),FeedBackV.class);
-                startActivity(intent);
-                ((Activity) getActivity()).overridePendingTransition(0,0);
+//        btnFeedB.setOnClickListener(v -> {
+//                Intent intent = new Intent(getActivity(),FeedBackV.class);
+//                startActivity(intent);
+//                ((Activity) getActivity()).overridePendingTransition(0,0);
+//
+//        });
 
-            }
+        btnvacation.setOnClickListener(V -> {
+
+            assert getFragmentManager() != null;
+            FragmentTransaction fr = getFragmentManager().beginTransaction();
+            fr.replace(R.id.fragment_container, new VacationV()).addToBackStack("open_vacation");
+            fr.commit();
         });
 
-        btnvacation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View V) {
-
+//        btnedit.setOnClickListener(V -> {
+//
+//            assert getFragmentManager() != null;
+//            FragmentTransaction fr = getFragmentManager().beginTransaction();
+//            fr.replace(R.id.fragment_container, new editDetV()).addToBackStack("to edit");
+//            fr.commit();
+//        });
+        btnsingout.setOnClickListener(V -> {
+            if (mAuth!=null){
+                mAuth.signOut();
                 assert getFragmentManager() != null;
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new VacationV()).addToBackStack("open_vacation");
+                fr.replace(R.id.fragment_container, new LoginV2()).addToBackStack("sign-out");
                 fr.commit();
             }
-
-        });
-
-        btnedit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View V) {
-
-                assert getFragmentManager() != null;
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new editDetV()).addToBackStack("to edit");
-                fr.commit();
-            }
-
-        });
-        btnsingout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View V) {
-                if (mAuth!=null){
-                    mAuth.signOut();
-                    assert getFragmentManager() != null;
-                    FragmentTransaction fr = getFragmentManager().beginTransaction();
-                    fr.replace(R.id.fragment_container, new LoginV2()).addToBackStack("singout");
-                    fr.commit();
-                }
-            }
-
         });
 
 
