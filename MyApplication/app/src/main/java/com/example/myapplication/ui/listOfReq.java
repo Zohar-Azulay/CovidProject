@@ -13,7 +13,6 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import com.example.myapplication.R;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,25 +23,23 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class openReqV extends AppCompatActivity {
+public class listOfReq extends AppCompatActivity {
 
-    private String id = "",uid;
+    private String id = "";
     private Button back;
     private ListView openRecList;
     private Spinner sortSpinner;
 
     private ArrayList<String> spinnerList = new ArrayList<String>();
     private ArrayAdapter<String> spinnerAdapter;
-    private FirebaseAuth mAuth;
+
     private DatabaseReference reff;
 
     private ArrayList<RequestsDB> arrayList = new ArrayList<RequestsDB>();
     private ArrayAdapter<RequestsDB> adapter;
-//    private ListView delList;
 
     private RequestsDB req = new RequestsDB();
-    private String selected;
-//    private String selectedID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,36 +48,23 @@ public class openReqV extends AppCompatActivity {
 
         if(getIntent().hasExtra("id"))
             id = getIntent().getStringExtra(id);
-        mAuth=FirebaseAuth.getInstance();
-        openRecList = (ListView) findViewById(R.id.openRecListV);
-        sortSpinner = (Spinner) findViewById(R.id.sortV);
+
+        openRecList = (ListView) findViewById(R.id.openRecList);
+        sortSpinner = (Spinner) findViewById(R.id.sort);
 
         spinnerList.add("בחר");
         spinnerList.add("סטטוס");
         spinnerList.add("תאריך");
         spinnerList.add("סוג בקשה");
-        spinnerAdapter = new ArrayAdapter<>(openReqV.this, android.R.layout.simple_spinner_dropdown_item,spinnerList);
+        spinnerAdapter = new ArrayAdapter<>(listOfReq.this, android.R.layout.simple_spinner_dropdown_item,spinnerList);
         sortSpinner.setAdapter(spinnerAdapter);
+//        sortByDate();
 
         reff =  FirebaseDatabase.getInstance().getReference("Requests");
         adapter =  new ArrayAdapter<RequestsDB>(this,android.R.layout.simple_list_item_1,arrayList);
 
-
 //        reff.child("dateStr").setValue(new Date());
         sortListView("status");
-        openRecList.setClickable(true);
-        openRecList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int index =(int) openRecList.getItemIdAtPosition(position);
-                RequestsDB select = arrayList.get(index);
-                selected=select.getPledgeID();
-                uid=mAuth.getCurrentUser().getUid();
-//                select.setHelper_uid(uid);
-
-            }
-        });
-
         sortSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
