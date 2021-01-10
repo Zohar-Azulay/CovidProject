@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,10 +18,16 @@
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.HomeAdmin"> </activity>
+        <activity android:name=".ui.EditPersonalDetails"> </activity>
+        <activity android:name=".ui.WelfareFactors"> </activity>
+        <activity android:name=".ui.openReq"> </activity>
+        <activity android:name=".ui.ReportToDevelopers"> </activity>
+        <activity android:name=".ui.DeleteUsers"> </activity>
+        <activity android:name=".ui.Reports"> </activity>
     </application>
 
 </manifest>

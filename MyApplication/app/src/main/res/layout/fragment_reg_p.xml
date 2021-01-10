@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reg_p_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".ui.reg_p">
+
+
+    <TextView
+        android:id="@+id/reg_h_headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="הרשמת מבקש עזרה"
+        android:textAlignment="center"
+        android:textSize="46sp"
+        tools:ignore="HardcodedText" />
+
+    <LinearLayout
+        android:id="@+id/name_h_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/reg_p_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/fullname_hint"
+            android:inputType="textPersonName"
+            android:layoutDirection="rtl"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/fullname_title_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center_vertical"
+            android:layoutDirection="rtl"
+            android:text="@string/fullname"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/year_h_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/reg_p_year"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:importantForAutofill="no"
+            android:isScrollContainer="true"
+            android:layoutDirection="rtl"
+            android:longClickable="false"
+            android:scrollbars="none"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:id="@+id/years_title_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center_vertical"
+            android:layoutDirection="rtl"
+            android:text="@string/yearofbirth"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/address_h_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/reg_p_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:importantForAutofill="no"
+            android:layoutDirection="rtl"
+            android:longClickable="false"
+            android:scrollbars="none"
+            android:textDirection="rtl"
+            tools:ignore="InefficientWeight" />
+
+        <TextView
+            android:id="@+id/address_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center_vertical"
+            android:layoutDirection="rtl"
+            android:text="@string/city"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/phone_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/reg_p_cell_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/cellphone_hint"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            android:layoutDirection="rtl"
+            android:textAlignment="textEnd"
+            tools:ignore="InefficientWeight" />
+
+        <TextView
+            android:id="@+id/phone_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center_vertical"
+            android:layoutDirection="rtl"
+            android:text="@string/cellphone"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/email_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/reg_p_email"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/email_hint"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:layoutDirection="rtl"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/email_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center_vertical"
+            android:layoutDirection="rtl"
+            android:text="@string/email"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/reg_p_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/password_hint"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:layoutDirection="rtl"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/password_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="30dp"
+            android:layout_weight="0"
+            android:gravity="center_vertical|end"
+            android:layoutDirection="rtl"
+            android:text="@string/password"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/progress_bar_p"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <CheckBox
+        android:id="@+id/taknon_check_p"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="10dp"
+        android:layoutDirection="rtl"
+        android:text="@string/taknon"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_reg_confirm"
+            android:layout_width="240dp"
+            android:layout_height="82dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:layoutDirection="rtl"
+
+            android:text="@string/confirm_reg"
+            android:textAlignment="center"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/pick_reg_help"
+            android:layout_width="wrap_content"
+            android:layout_height="82dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="10dp"
+            android:text="עזרה בהרשמה"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>
